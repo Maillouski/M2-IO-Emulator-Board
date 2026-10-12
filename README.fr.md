@@ -37,6 +37,18 @@ d'origine (retour de force) et moniteur arcade d'origine.
 
 Le même tableau est imprimé sur la carte (en anglais).
 
+## Vues 3D
+
+Rendus KiCad 10 tirés des fichiers de ce dépôt (les connecteurs JST NH n'ont pas de modèle 3D : seules leurs pastilles
+apparaissent).
+
+| | |
+|---|---|
+| ![Vue en perspective](docs/board-3d-back.png) | ![Gros plan de la section vidéo](docs/board-video.png) |
+| Vue en perspective | Section vidéo : entrée VGA, ampli OPA3355, cavaliers et tableau de réglage |
+| ![Vue de dessus](docs/board-top.png) | ![Vue de dessous](docs/board-bottom.png) |
+| Dessus | Dessous |
+
 ## Contenu du dépôt
 
 | Chemin | Contenu |

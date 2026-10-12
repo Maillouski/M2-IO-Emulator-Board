@@ -36,6 +36,17 @@ feedback) and the original arcade monitor.
 
 The same table is printed on the board.
 
+## 3D views
+
+Rendered with KiCad 10 from the files in this repository (the JST NH connectors have no 3D model, so only their pads show).
+
+| | |
+|---|---|
+| ![Perspective view](docs/board-3d-back.png) | ![Video section close-up](docs/board-video.png) |
+| Perspective view | Video section: VGA in, OPA3355 amplifier, jumpers and settings table |
+| ![Top view](docs/board-top.png) | ![Bottom view](docs/board-bottom.png) |
+| Top | Bottom |
+
 ## Repository
 
 | Path | Contents |

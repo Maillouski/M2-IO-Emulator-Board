@@ -1,0 +1,12 @@
+(version 1)
+
+# U3 (OPA3355EA, TSSOP-14, 0.65 mm pitch): only 0.25 mm between neighbouring pads, less than the 0.3 mm clearance
+# of the GND and Alim_1mm net classes (+5V_MEGA on pins 1-4, GND on pin 11).
+(rule "U3: 0.2 mm clearance inside the courtyard"
+  (condition "A.intersectsCourtyard('U3')")
+  (constraint clearance (min 0.2mm)))
+
+# Tracks inside the U3 courtyard: 0.25 mm (pads are 0.4 mm wide), whatever the net class.
+(rule "U3: 0.25 mm tracks inside the courtyard"
+  (condition "A.Type == 'Track' && A.intersectsCourtyard('U3')")
+  (constraint track_width (min 0.2mm) (opt 0.25mm) (max 0.4mm)))

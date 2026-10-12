@@ -13,20 +13,24 @@ d'origine (retour de force) et moniteur arcade d'origine.
 
 ## Ce qu'elle fait
 
-- **Mêmes dimensions et mêmes trous que la carte Sega** (180 × 190 mm, quatre trous Ø 4 mm à 5,3 mm des bords) et mêmes noms de
-  connecteurs (CN1, CN2, CN3, CN5, CN6) : le faisceau d'origine se branche tel quel, rien n'est coupé.
-- **CN1 (50 broches) :** entrées monnayeur, TEST, SERVICE, START, VR1-VR4 et levier de vitesses (rappel 4,7 kΩ, filtre 1 kΩ /
-  100 nF), et sorties lampes, compteurs et relais par un ULN2803A (U1, sur support).
-- **CN2 (26 broches) :** potentiomètres du volant, de l'accélérateur et du frein vers les entrées analogiques du Mega (A0-A2), avec
-  filtres RC.
-- **CN6 / CN5 (12 broches chacun) :** octet d'ordre vers la drive board et son octet de réponse (1 kΩ en série, rappel 10 kΩ au
-  5 V du Mega), pour le retour de force d'origine.
-- **CN3 (10 broches) :** +5 V et masse de la borne. Le +5 V de la borne n'est jamais relié au 5 V du Mega.
-- **JP1 :** alimentation logique de la drive board. 1-2 = 5 V du Mega, 2-3 = 5 V de la borne.
-- Boutons **TEST** et **SERVICE** sur la carte, DEL **CAB PWR LED**, et points de test pour la masse, le +5 V du Mega, le +5 V de
-  la borne et l'alimentation de la drive board.
-- **Vidéo :** entrée VGA (J13) vers la fiche du moniteur arcade (J14, R/V/B + synchro composite). U2 (74HCT86) fabrique la synchro
-  composite négative à partir des synchros H et V. U3 (OPA3355, gain ≈ 4) peut amplifier R/V/B pour une source VGA à 0,7 V.
+L'idée est simple : on sort la carte E/S Sega de la borne et on met celle-ci à sa place. Elle a les mêmes dimensions, les mêmes
+trous de fixation et les mêmes noms de connecteurs, donc le faisceau d'origine se branche directement. Rien n'est coupé ni
+recâblé.
+
+Une fois en place, l'Arduino Mega fait le pont entre l'émulateur et la borne. Il lit les commandes et pilote tout ce que la carte
+d'origine pilotait :
+
+- **Commandes** — volant, accélérateur, frein, levier de vitesses, monnayeur, START, boutons de vue VR, TEST et SERVICE.
+- **Lampes, compteurs et relais** — commandés par un ULN2803A sur support : les ampoules et les compteurs d'origine continuent de
+  fonctionner.
+- **Retour de force** — la drive board d'origine reste dans la borne et reçoit ses ordres du Mega : le volant garde son retour de force
+  d'origine.
+- **Vidéo** — une entrée VGA va au moniteur arcade d'origine, avec la synchro composite fabriquée sur la carte. Un petit ampli
+  vidéo, activable par cavaliers, remonte le niveau d'une source PC ou d'un adaptateur HDMI-VGA au niveau qu'attend le tube.
+
+Quelques détails pratiques facilitent la mise en route : boutons TEST et SERVICE directement sur la carte, DEL d'alimentation,
+points de test pour chaque alimentation, et un cavalier (JP1) pour choisir si la logique de la drive board est alimentée par le
+5 V du Mega ou par celui de la borne.
 
 ## Cavaliers vidéo
 

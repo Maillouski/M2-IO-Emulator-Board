@@ -13,19 +13,21 @@ feedback) and the original arcade monitor.
 
 ## What it does
 
-- **Same size and holes as the Sega board** (180 × 190 mm, four Ø 4 mm holes 5.3 mm from the edges) and the same connector names
-  (CN1, CN2, CN3, CN5, CN6): the original harness plugs in, nothing is cut.
-- **CN1 (50 pins):** coin, TEST, SERVICE, START, VR1-VR4 and shifter inputs (4.7 kΩ pull-up, 1 kΩ / 100 nF filter), and lamp,
-  meter and relay outputs through a ULN2803A (U1, socketed).
-- **CN2 (26 pins):** steering, accelerator and brake potentiometers to the Mega's analog inputs (A0-A2), with RC filters.
-- **CN6 / CN5 (12 pins each):** command byte to the drive board and its answer byte (1 kΩ series, 10 kΩ pull-up to the Mega 5 V), for the
-  original force feedback.
-- **CN3 (10 pins):** cabinet +5 V and ground. Cabinet +5 V is never tied to the Mega's 5 V.
-- **JP1:** drive board logic supply. 1-2 = 5 V from the Mega, 2-3 = 5 V from the cabinet.
-- **TEST and SERVICE** buttons on the board, **CAB PWR LED**, and test points for GND, +5 V Mega, +5 V cabinet and the drive board
-  supply.
-- **Video:** VGA in (J13) to the arcade monitor connector (J14, R/G/B + composite sync). U2 (74HCT86) makes negative composite sync
-  from H and V sync. U3 (OPA3355, gain ≈ 4) can boost R/G/B for a 0.7 V VGA source.
+The idea is simple: pull the Sega I/O board out of the cabinet and put this one in its place. It has the same size, the same
+mounting holes and the same connector names, so the original harness plugs straight in. Nothing gets cut or rewired.
+
+Once it's in, the Arduino Mega becomes the bridge between the emulator and the cabinet. It reads the controls and drives
+everything the original board used to drive:
+
+- **Controls** — steering, accelerator, brake, shifter, coin, START, the VR view buttons, TEST and SERVICE.
+- **Lamps, meters and relay** — switched by a socketed ULN2803A, so the original bulbs and coin meters keep working.
+- **Force feedback** — the original drive board stays in the cabinet and gets its commands from the Mega, so the wheel keeps
+  its original force feedback.
+- **Video** — a VGA input goes to the original arcade monitor, with composite sync built on the board. A small switchable video
+  amplifier lifts the level of a PC or HDMI-to-VGA source to the level the tube expects.
+
+A few practical details make bring-up easier: TEST and SERVICE buttons right on the board, a power LED, test points for each
+supply, and a jumper (JP1) to choose whether the drive board logic runs from the Mega's 5 V or from the cabinet's.
 
 ## Video jumpers
 

@@ -8,6 +8,9 @@ Quantités **par carte**. 121 repères, vérifiés un par un contre le schéma.
 Manufacturer, Customer Reference). Le charger dans le gestionnaire de BOM de DigiKey ou dans une myList, puis multiplier par le
 nombre de cartes.
 
+**Assemblage JLCPCB :** pour faire souder les CMS par JLCPCB, voir
+[`../fabrication/jlcpcb/`](../fabrication/jlcpcb/README.fr.md) (numéros LCSC, fichiers BOM et CPL).
+
 Chaque numéro DigiKey ci-dessous a été vérifié en direct sur digikey.ca le 2026-10-12, en dollars canadiens, bande coupée, à la
 quantité 1, sans taxes ni livraison. Prix et stocks changent : revérifier avant de commander.
 

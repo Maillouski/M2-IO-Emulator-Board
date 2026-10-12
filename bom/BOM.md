@@ -7,6 +7,9 @@ Quantities are **per board**. 121 references, checked one by one against the sch
 **DigiKey import:** [`BOM-digikey.csv`](BOM-digikey.csv) (Quantity, Digi-Key Part Number, Manufacturer Part Number,
 Manufacturer, Customer Reference). Upload it to the DigiKey BOM Manager or a myList, then multiply by the number of boards.
 
+**JLCPCB assembly:** to have JLCPCB solder the SMD parts, see
+[`../fabrication/jlcpcb/`](../fabrication/jlcpcb/README.md) (LCSC numbers, BOM and CPL files).
+
 Every DigiKey number below was checked live on digikey.ca on 2026-10-12, in CAD, cut tape, at quantity 1, without tax or
 shipping. Prices and stock change, so check again before you order.
 

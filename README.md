@@ -54,7 +54,7 @@ Rendered with KiCad 10 from the files in this repository.
 | Path | Contents |
 |---|---|
 | `kicad/` | KiCad 10 project: schematic, PCB, design rules, project footprint library (`interface-borne.pretty`), 3D models |
-| `fabrication/` | Gerbers, Excellon drill files and drill maps (`gerbers/`), the same files zipped for the fab, pick-and-place file |
+| `fabrication/` | Gerbers, Excellon drill files and drill maps (`gerbers/`), the same files zipped for the fab, pick-and-place file; JLCPCB BOM and CPL for SMD assembly ([`jlcpcb/`](fabrication/jlcpcb/README.md)) |
 | `bom/` | Full BOM ([`BOM.md`](bom/BOM.md)) and DigiKey import file ([`BOM-digikey.csv`](bom/BOM-digikey.csv)) |
 | `docs/` | Schematic PDF, board renders |
 

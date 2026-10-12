@@ -28031,20 +28031,8 @@
 			)
 		)
 	)
-	(gr_text "R"
-		(at 98.905 139.5 0)
-		(layer "F.SilkS")
-		(uuid "9c8b3e0a-33ed-487f-9118-29449cc2cdd3")
-		(effects
-			(font
-				(size 1.2 1.2)
-				(thickness 0.24)
-				(bold yes)
-			)
-		)
-	)
 	(gr_text "B"
-		(at 99.405 128.5 0)
+		(at 98.905 128.5 0)
 		(layer "F.SilkS")
 		(uuid "2df7af26-0839-46cd-9345-941ebf3ee1db")
 		(effects
@@ -28056,9 +28044,21 @@
 		)
 	)
 	(gr_text "G"
-		(at 99.405 134 0)
+		(at 98.905 134 0)
 		(layer "F.SilkS")
 		(uuid "efc43b89-6bec-4d6f-a7b3-f9d8885d7f8b")
+		(effects
+			(font
+				(size 1.2 1.2)
+				(thickness 0.24)
+				(bold yes)
+			)
+		)
+	)
+	(gr_text "R"
+		(at 98.905 139.5 0)
+		(layer "F.SilkS")
+		(uuid "9c8b3e0a-33ed-487f-9118-29449cc2cdd3")
 		(effects
 			(font
 				(size 1.2 1.2)

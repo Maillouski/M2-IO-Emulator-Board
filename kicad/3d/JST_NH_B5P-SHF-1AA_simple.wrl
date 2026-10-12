@@ -1,0 +1,14 @@
+#VRML V2.0 utf8
+# JST NH B5P-SHF-1AA, modèle simplifié (embase + broches), généré par nh_models_3d.py
+Shape { appearance Appearance { material Material { diffuseColor 0.93 0.91 0.84 specularColor 0.3 0.3 0.3 shininess 0.10 } }
+ geometry IndexedFaceSet { solid FALSE coord Coordinate { point [ -0.8268 -4.5669 0.0000, 1.3780 -4.5669 0.0000, 1.3780 0.6299 0.0000, -0.8268 0.6299 0.0000, -0.8268 -4.5669 1.2598, 1.3780 -4.5669 1.2598, 1.3780 0.6299 1.2598, -0.8268 0.6299 1.2598 ] } coordIndex [ 0,3,2,1,-1, 4,5,6,7,-1, 0,1,5,4,-1, 1,2,6,5,-1, 2,3,7,6,-1, 3,0,4,7,-1 ] } }
+Shape { appearance Appearance { material Material { diffuseColor 0.78 0.78 0.80 specularColor 0.3 0.3 0.3 shininess 0.60 } }
+ geometry IndexedFaceSet { solid FALSE coord Coordinate { point [ -0.1260 -0.1260 -1.3386, 0.1260 -0.1260 -1.3386, 0.1260 0.1260 -1.3386, -0.1260 0.1260 -1.3386, -0.1260 -0.1260 3.6220, 0.1260 -0.1260 3.6220, 0.1260 0.1260 3.6220, -0.1260 0.1260 3.6220 ] } coordIndex [ 0,3,2,1,-1, 4,5,6,7,-1, 0,1,5,4,-1, 1,2,6,5,-1, 2,3,7,6,-1, 3,0,4,7,-1 ] } }
+Shape { appearance Appearance { material Material { diffuseColor 0.78 0.78 0.80 specularColor 0.3 0.3 0.3 shininess 0.60 } }
+ geometry IndexedFaceSet { solid FALSE coord Coordinate { point [ -0.1260 -1.1102 -1.3386, 0.1260 -1.1102 -1.3386, 0.1260 -0.8583 -1.3386, -0.1260 -0.8583 -1.3386, -0.1260 -1.1102 3.6220, 0.1260 -1.1102 3.6220, 0.1260 -0.8583 3.6220, -0.1260 -0.8583 3.6220 ] } coordIndex [ 0,3,2,1,-1, 4,5,6,7,-1, 0,1,5,4,-1, 1,2,6,5,-1, 2,3,7,6,-1, 3,0,4,7,-1 ] } }
+Shape { appearance Appearance { material Material { diffuseColor 0.78 0.78 0.80 specularColor 0.3 0.3 0.3 shininess 0.60 } }
+ geometry IndexedFaceSet { solid FALSE coord Coordinate { point [ -0.1260 -2.0945 -1.3386, 0.1260 -2.0945 -1.3386, 0.1260 -1.8425 -1.3386, -0.1260 -1.8425 -1.3386, -0.1260 -2.0945 3.6220, 0.1260 -2.0945 3.6220, 0.1260 -1.8425 3.6220, -0.1260 -1.8425 3.6220 ] } coordIndex [ 0,3,2,1,-1, 4,5,6,7,-1, 0,1,5,4,-1, 1,2,6,5,-1, 2,3,7,6,-1, 3,0,4,7,-1 ] } }
+Shape { appearance Appearance { material Material { diffuseColor 0.78 0.78 0.80 specularColor 0.3 0.3 0.3 shininess 0.60 } }
+ geometry IndexedFaceSet { solid FALSE coord Coordinate { point [ -0.1260 -3.0787 -1.3386, 0.1260 -3.0787 -1.3386, 0.1260 -2.8268 -1.3386, -0.1260 -2.8268 -1.3386, -0.1260 -3.0787 3.6220, 0.1260 -3.0787 3.6220, 0.1260 -2.8268 3.6220, -0.1260 -2.8268 3.6220 ] } coordIndex [ 0,3,2,1,-1, 4,5,6,7,-1, 0,1,5,4,-1, 1,2,6,5,-1, 2,3,7,6,-1, 3,0,4,7,-1 ] } }
+Shape { appearance Appearance { material Material { diffuseColor 0.78 0.78 0.80 specularColor 0.3 0.3 0.3 shininess 0.60 } }
+ geometry IndexedFaceSet { solid FALSE coord Coordinate { point [ -0.1260 -4.0630 -1.3386, 0.1260 -4.0630 -1.3386, 0.1260 -3.8110 -1.3386, -0.1260 -3.8110 -1.3386, -0.1260 -4.0630 3.6220, 0.1260 -4.0630 3.6220, 0.1260 -3.8110 3.6220, -0.1260 -3.8110 3.6220 ] } coordIndex [ 0,3,2,1,-1, 4,5,6,7,-1, 0,1,5,4,-1, 1,2,6,5,-1, 2,3,7,6,-1, 3,0,4,7,-1 ] } }

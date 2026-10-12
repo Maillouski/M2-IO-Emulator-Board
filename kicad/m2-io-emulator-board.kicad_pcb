@@ -832,15 +832,15 @@
 			(uuid "16e5f774-7ef8-4705-9840-f6764443ac2b")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/3d/JST_NH_B10P-SHF-1AA.wrl"
+		(model "${KIPRJMOD}/3d/JST_NH_B10P-SHF-1AA_simple.wrl"
 			(offset
-				(xyz 0 -11.25 0)
+				(xyz 0 0 0)
 			)
 			(scale
 				(xyz 1 1 1)
 			)
 			(rotate
-				(xyz 0 0 -90)
+				(xyz 0 0 0)
 			)
 		)
 	)
@@ -10462,15 +10462,15 @@
 			(uuid "b58de016-5aad-4c25-b536-388e73dff761")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/3d/JST_NH_B12P-SHF-1AA.wrl"
+		(model "${KIPRJMOD}/3d/JST_NH_B12P-SHF-1AA_simple.wrl"
 			(offset
-				(xyz 0 -13.75 0)
+				(xyz 0 0 0)
 			)
 			(scale
 				(xyz 1 1 1)
 			)
 			(rotate
-				(xyz 0 0 90)
+				(xyz 0 0 0)
 			)
 		)
 	)
@@ -18699,15 +18699,15 @@
 			(uuid "a8f47fe4-1095-4b9a-b6c8-408ed89e22d7")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/3d/JST_NH_B12P-SHF-1AA.wrl"
+		(model "${KIPRJMOD}/3d/JST_NH_B12P-SHF-1AA_simple.wrl"
 			(offset
-				(xyz 0 -13.75 0)
+				(xyz 0 0 0)
 			)
 			(scale
 				(xyz 1 1 1)
 			)
 			(rotate
-				(xyz 0 0 90)
+				(xyz 0 0 0)
 			)
 		)
 	)
@@ -20692,15 +20692,15 @@
 			(uuid "2ae7b39f-00d0-4f5b-94b4-f6e86710b086")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/3d/JST_NH_B5P-SHF-1AA.wrl"
+		(model "${KIPRJMOD}/3d/JST_NH_B5P-SHF-1AA_simple.wrl"
 			(offset
-				(xyz 0 -5 0)
+				(xyz 0 0 0)
 			)
 			(scale
 				(xyz 1 1 1)
 			)
 			(rotate
-				(xyz 0 0 -90)
+				(xyz 0 0 0)
 			)
 		)
 	)

@@ -35,9 +35,9 @@
 	(pad "8" thru_hole circle (at 0 17.500) (size 1.60 1.60) (drill 0.95) (layers "*.Cu" "*.Mask"))
 	(pad "9" thru_hole circle (at 0 20.000) (size 1.60 1.60) (drill 0.95) (layers "*.Cu" "*.Mask"))
 	(pad "10" thru_hole circle (at 0 22.500) (size 1.60 1.60) (drill 0.95) (layers "*.Cu" "*.Mask"))
-	(model "${KIPRJMOD}/3d/JST_NH_B10P-SHF-1AA.wrl"
-		(offset (xyz 0 -11.250 0))
+	(model "${KIPRJMOD}/3d/JST_NH_B10P-SHF-1AA_simple.wrl"
+		(offset (xyz 0 0 0))
 		(scale (xyz 1 1 1))
-		(rotate (xyz 0 0 -90))
+		(rotate (xyz 0 0 0))
 	)
 )

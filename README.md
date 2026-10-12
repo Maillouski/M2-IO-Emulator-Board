@@ -40,7 +40,7 @@ The same table is printed on the board.
 
 ## 3D views
 
-Rendered with KiCad 10 from the files in this repository (the JST NH connectors have no 3D model, so only their pads show).
+Rendered with KiCad 10 from the files in this repository.
 
 | | |
 |---|---|
@@ -76,7 +76,7 @@ Check these before you order or power anything:
 ## 3D models
 
 The Arduino Mega model in `kicad/3d/` is derived from Arduino's CAD files (CC BY-SA 4.0) and KiCad library models; see
-[`kicad/3d/README.md`](kicad/3d/README.md). The JST NH connectors have no 3D model in this repository.
+[`kicad/3d/README.md`](kicad/3d/README.md). The JST NH connectors use simplified models made for this project (plastic base and pins).
 
 ## Credits
 

@@ -43,8 +43,7 @@ Le même tableau est imprimé sur la carte (en anglais).
 
 ## Vues 3D
 
-Rendus KiCad 10 tirés des fichiers de ce dépôt (les connecteurs JST NH n'ont pas de modèle 3D : seules leurs pastilles
-apparaissent).
+Rendus KiCad 10 tirés des fichiers de ce dépôt.
 
 | | |
 |---|---|
@@ -80,8 +79,8 @@ Carte : 2 couches, 180 × 190 mm. Les Gerbers sortent des réglages de tracé en
 ## Modèles 3D
 
 Le modèle de l'Arduino Mega dans `kicad/3d/` est dérivé des fichiers CAO d'Arduino (CC BY-SA 4.0) et de modèles de la
-bibliothèque KiCad ; voir [`kicad/3d/README.fr.md`](kicad/3d/README.fr.md). Les connecteurs JST NH n'ont pas de modèle 3D dans ce
-dépôt.
+bibliothèque KiCad ; voir [`kicad/3d/README.fr.md`](kicad/3d/README.fr.md). Les connecteurs JST NH utilisent des modèles
+simplifiés faits pour ce projet (embase et broches).
 
 ## Crédits
 

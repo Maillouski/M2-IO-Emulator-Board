@@ -24,7 +24,7 @@ everything the original board used to drive:
 - **Force feedback** — the original drive board stays in the cabinet and gets its commands from the Mega, so the wheel keeps
   its original force feedback.
 - **Video** — a VGA input goes to the original arcade monitor, with composite sync built on the board. A small switchable video
-  amplifier lifts the level of a PC or HDMI-to-VGA source to the level the tube expects.
+  amplifier lifts a PC or HDMI-to-VGA signal to the level the tube expects.
 
 A few practical details make bring-up easier: TEST and SERVICE buttons right on the board, a power LED, test points for each
 supply, and a jumper (JP1) to choose whether the drive board logic runs from the Mega's 5 V or from the cabinet's.

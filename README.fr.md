@@ -26,7 +26,7 @@ d'origine pilotait :
 - **Retour de force** — la drive board d'origine reste dans la borne et reçoit ses ordres du Mega : le volant garde son retour de force
   d'origine.
 - **Vidéo** — une entrée VGA va au moniteur arcade d'origine, avec la synchro composite fabriquée sur la carte. Un petit ampli
-  vidéo, activable par cavaliers, remonte le niveau d'une source PC ou d'un adaptateur HDMI-VGA au niveau qu'attend le tube.
+  vidéo, activable par cavaliers, remonte le signal d'une source PC ou d'un adaptateur HDMI-VGA au niveau qu'attend le tube.
 
 Quelques détails pratiques facilitent la mise en route : boutons TEST et SERVICE directement sur la carte, DEL d'alimentation,
 points de test pour chaque alimentation, et un cavalier (JP1) pour choisir si la logique de la drive board est alimentée par le

@@ -20,7 +20,7 @@ Once it's in, the Arduino Mega becomes the bridge between the emulator and the c
 everything the original board used to drive:
 
 - **Controls** — steering, accelerator, brake, shifter, coin, START, the VR view buttons, TEST and SERVICE.
-- **Lamps, meters and relay** — switched by a socketed ULN2803A, so the original bulbs and coin meters keep working.
+- **Lamps, meters and relay** — switched by a ULN2803A, so the original bulbs and coin meters keep working.
 - **Force feedback** — the original drive board stays in the cabinet and gets its commands from the Mega, so the wheel keeps
   its original force feedback.
 - **Video** — a VGA input goes to the original arcade monitor, with composite sync built on the board. A small switchable video

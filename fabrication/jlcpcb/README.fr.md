@@ -59,7 +59,7 @@ Numéros, types, stocks et prix vérifiés en direct sur jlcpcb.com le 2026-10-1
 
 ## Pièces à souder vous-même
 
-Ce sont les pièces traversantes : C17, D1, J1-J14, JP1-JP7, SK1 (puis U1 dans son support), SW1, SW2 et TP1-TP4, plus les
+Ce sont les pièces traversantes : C17, D1, J1-J14, JP1-JP7, U1, SW1, SW2 et TP1-TP4, plus les
 cavaliers SH1-SH7. Commandez-les avec la [BOM DigiKey](../../bom/BOM-digikey.csv), sans les lignes CMS.
 
 JLCPCB peut aussi souder les pièces traversantes, contre supplément. LCSC a en stock les embases JST NH de 10 et 12 broches

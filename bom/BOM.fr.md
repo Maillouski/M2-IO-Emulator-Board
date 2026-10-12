@@ -2,7 +2,7 @@
 
 [English](BOM.md) | **Français**
 
-Quantités **par carte**. 121 repères, vérifiés un par un contre le schéma.
+Quantités **par carte**. 120 repères, vérifiés un par un contre le schéma.
 
 **Import DigiKey :** [`BOM-digikey.csv`](BOM-digikey.csv) (Quantity, Digi-Key Part Number, Manufacturer Part Number,
 Manufacturer, Customer Reference). Le charger dans le gestionnaire de BOM de DigiKey ou dans une myList, puis multiplier par le
@@ -42,10 +42,9 @@ quantité 1, sans taxes ni livraison. Prix et stocks changent : revérifier avan
 | 3 | R51-R53 | 604 Ω 1 % 0805 | YAGEO RC0805FR-07604RL | 311-604CRCT-ND | contre-réaction de l'ampli vidéo |
 | 3 | R54-R56 | 200 Ω 1 % 0805 | YAGEO RC0805FR-07200RL | 311-200CRCT-ND | gain de l'ampli vidéo (gain = 4,02) |
 | 3 | R57-R59 | 33 Ω 1 % 0805 | YAGEO RC0805FR-0733RL | 311-33.0CRCT-ND | sortie de l'ampli vidéo |
-| 1 | SK1 | support DIP-18 | TE 1-2199298-5 | A120350-ND | pour U1 |
 | 2 | SW1, SW2 | bouton tactile 6 × 6 mm | TE 1825910-6 | 450-1650-ND | TEST, SERVICE |
 | 4 | TP1-TP4 | point de test | Keystone 5002 | 36-5002-ND | |
-| 1 | U1 | ULN2803A, DIP-18 | STMicroelectronics ULN2803A | 497-2356-5-ND | lampes, compteurs, relais ; dans SK1 |
+| 1 | U1 | ULN2803A, DIP-18 | STMicroelectronics ULN2803A | 497-2356-5-ND | lampes, compteurs, relais ; soudé directement, sans support |
 | 1 | U2 | 74HCT86, SOIC-14 | Nexperia 74HCT86D,653 | 1727-6360-1-ND | synchro composite (H XOR V, puis inversion) |
 | 1 | U3 | OPA3355EA, TSSOP-14 | Texas Instruments OPA3355EA/2K5 | 296-29279-1-ND | triple ampli vidéo (R, V, B) |
 

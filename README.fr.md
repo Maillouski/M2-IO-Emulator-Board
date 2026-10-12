@@ -21,7 +21,7 @@ Une fois en place, l'Arduino Mega fait le pont entre l'émulateur et la borne. I
 d'origine pilotait :
 
 - **Commandes** — volant, accélérateur, frein, levier de vitesses, monnayeur, START, boutons de vue VR, TEST et SERVICE.
-- **Lampes, compteurs et relais** — commandés par un ULN2803A sur support : les ampoules et les compteurs d'origine continuent de
+- **Lampes, compteurs et relais** — commandés par un ULN2803A : les ampoules et les compteurs d'origine continuent de
   fonctionner.
 - **Retour de force** — la drive board d'origine reste dans la borne et reçoit ses ordres du Mega : le volant garde son retour de force
   d'origine.

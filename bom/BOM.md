@@ -2,7 +2,7 @@
 
 **English** | [Français](BOM.fr.md)
 
-Quantities are **per board**. 121 references, checked one by one against the schematic.
+Quantities are **per board**. 120 references, checked one by one against the schematic.
 
 **DigiKey import:** [`BOM-digikey.csv`](BOM-digikey.csv) (Quantity, Digi-Key Part Number, Manufacturer Part Number,
 Manufacturer, Customer Reference). Upload it to the DigiKey BOM Manager or a myList, then multiply by the number of boards.
@@ -41,10 +41,9 @@ shipping. Prices and stock change, so check again before you order.
 | 3 | R51-R53 | 604 Ω 1 % 0805 | YAGEO RC0805FR-07604RL | 311-604CRCT-ND | video amp feedback |
 | 3 | R54-R56 | 200 Ω 1 % 0805 | YAGEO RC0805FR-07200RL | 311-200CRCT-ND | video amp gain (gain = 4.02) |
 | 3 | R57-R59 | 33 Ω 1 % 0805 | YAGEO RC0805FR-0733RL | 311-33.0CRCT-ND | video amp output |
-| 1 | SK1 | DIP-18 socket | TE 1-2199298-5 | A120350-ND | for U1 |
 | 2 | SW1, SW2 | 6 × 6 mm tactile switch | TE 1825910-6 | 450-1650-ND | TEST, SERVICE |
 | 4 | TP1-TP4 | test point | Keystone 5002 | 36-5002-ND | |
-| 1 | U1 | ULN2803A, DIP-18 | STMicroelectronics ULN2803A | 497-2356-5-ND | lamps, meters, relay; goes in SK1 |
+| 1 | U1 | ULN2803A, DIP-18 | STMicroelectronics ULN2803A | 497-2356-5-ND | lamps, meters, relay; soldered directly, no socket |
 | 1 | U2 | 74HCT86, SOIC-14 | Nexperia 74HCT86D,653 | 1727-6360-1-ND | composite sync (H XOR V, then inverted) |
 | 1 | U3 | OPA3355EA, TSSOP-14 | Texas Instruments OPA3355EA/2K5 | 296-29279-1-ND | triple video amplifier (R, G, B) |
 

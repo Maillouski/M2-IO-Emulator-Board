@@ -57,7 +57,7 @@ All numbers, types, stock levels and prices were checked live on jlcpcb.com on 2
 
 ## Parts you solder yourself
 
-These are the through-hole parts: C17, D1, J1-J14, JP1-JP7, SK1 (then U1 in its socket), SW1, SW2 and TP1-TP4, plus the
+These are the through-hole parts: C17, D1, J1-J14, JP1-JP7, U1, SW1, SW2 and TP1-TP4, plus the
 SH1-SH7 jumpers. Order them with the [DigiKey BOM](../../bom/BOM-digikey.csv), leaving out the SMD lines.
 
 JLCPCB can also solder through-hole parts, at extra cost. LCSC stocks the 10-pin and 12-pin JST NH headers (C160365: 3 517 in

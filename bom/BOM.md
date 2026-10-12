@@ -1,5 +1,7 @@
 # Bill of materials — M2 IO Emulator Board
 
+**English** | [Français](BOM.fr.md)
+
 Quantities are **per board**. 121 references, checked one by one against the schematic.
 
 **DigiKey import:** [`BOM-digikey.csv`](BOM-digikey.csv) (Quantity, Digi-Key Part Number, Manufacturer Part Number,

@@ -28079,7 +28079,7 @@
 			(justify left bottom)
 		)
 	)
-	(gr_text "Design: Nicolas Mailloux, 2026 nicolas.mailloux@micronick.com\nhttps://github.com/Maillouski/Arcade-M3"
+	(gr_text "Design: Nicolas Mailloux, 2026 nicolas.mailloux@micronick.com\nhttps://github.com/Maillouski/M2-IO-Emulator-Board"
 		(at 112 161.5 0)
 		(layer "F.SilkS")
 		(uuid "b6d0365f-5223-4756-8d10-bb64816138ab")

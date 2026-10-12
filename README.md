@@ -1,5 +1,7 @@
 # M2 IO Emulator Board
 
+**English** | [Français](README.fr.md)
+
 A drop-in replacement for the **Sega 837-10539 I/O board** of the **Daytona USA twin** cabinet (Sega Model 2), built around an
 **Arduino Mega 2560**. It lets an emulator drive the original cabinet: controls, lamps, meters, the original drive board (force
 feedback) and the original arcade monitor.

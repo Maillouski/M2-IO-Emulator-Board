@@ -1,5 +1,7 @@
 # 3D models
 
+**English** | [Français](README.fr.md)
+
 | File | Used by | Origin | License |
 |---|---|---|---|
 | `Arduino_Mega2560_Rev3e.stpz` | MEGA1 (Arduino Mega 2560, board-only footprint) | Built from Arduino's official CAD files for the Mega 2560 Rev3e (`A000067-cad-files.zip`, Eagle board), with KiCad library 3D models placed on its parts | CC BY-SA 4.0 (Arduino; KiCad libraries) |

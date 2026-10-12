@@ -10,8 +10,7 @@ JLCPCB fabrique la carte et soude les 83 composants CMS. Vous soudez vous-même 
 | [`m2-io-emulator-board-BOM-jlcpcb.csv`](m2-io-emulator-board-BOM-jlcpcb.csv) | PCB Assembly → « Add BOM File » |
 | [`m2-io-emulator-board-CPL-jlcpcb.csv`](m2-io-emulator-board-CPL-jlcpcb.csv) | PCB Assembly → « Add CPL File » |
 
-> Lisez d'abord les [points ouverts](../../README.fr.md#points-ouverts). Le pas des JST NH, surtout, doit être confirmé avant de
-> commander des cartes.
+> Lisez d'abord les [points ouverts](../../README.fr.md#points-ouverts).
 
 ## Options de commande
 

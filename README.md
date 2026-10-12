@@ -64,13 +64,13 @@ Board: 2 layers, 180 × 190 mm. Gerbers come from the PCB's own plot settings (K
 
 Check these before you order or power anything:
 
-1. **JST NH pitch.** CN3, CN5, CN6 and J14 use JST NH footprints at **2.5 mm pitch**. The pitch on the original Sega board has
-   not been measured yet. If it turns out to be 2.54 mm, these footprints must change.
+1. **J14 pitch.** CN3, CN5, CN6 and J14 use JST NH footprints at **2.5 mm pitch**. On an original Sega board, CN3 and CN5 were
+   measured with a caliper at 2.50 mm (pin 1 to pin 10: 22.54 mm; pin 1 to pin 12: 27.42 mm). The 5-pin video plug that J14
+   takes has not been measured yet.
 2. **J14 pin order** (R, G, B, sync, ground) is still provisional. Check it against your cabinet's video plug.
 3. **Video level.** The amplifier gain (4.02, set by R51-R56) assumes a source that outputs 0.7 V into 75 Ω. This has not been
    measured. Change R54-R56 to adjust it.
-4. **CN1 and CN2** are plain 3M four-wall headers. The original board uses headers with ejector latches, so the plug goes in but is
-   not held.
+4. **CN1 and CN2** are plain 3M four-wall headers, without ejector latches. The cabinet's CN1 plug was checked to fit.
 5. **Firmware** for the Mega is not part of this repository.
 
 ## 3D models

@@ -10,8 +10,7 @@ JLCPCB makes the board and solders the 83 SMD parts. You solder the through-hole
 | [`m2-io-emulator-board-BOM-jlcpcb.csv`](m2-io-emulator-board-BOM-jlcpcb.csv) | PCB Assembly → "Add BOM File" |
 | [`m2-io-emulator-board-CPL-jlcpcb.csv`](m2-io-emulator-board-CPL-jlcpcb.csv) | PCB Assembly → "Add CPL File" |
 
-> Read the [open points](../../README.md#open-points) first. The JST NH pitch in particular has to be confirmed before you
-> order bare boards.
+> Read the [open points](../../README.md#open-points) first.
 
 ## Order settings
 

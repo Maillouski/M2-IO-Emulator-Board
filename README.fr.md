@@ -11,6 +11,9 @@ d'origine (retour de force) et moniteur arcade d'origine.
 > **État : prototype.** Le design passe la DRC et l'ERC, mais aucune carte n'a encore été fabriquée ni testée. Lire les
 > [points ouverts](#points-ouverts) avant de commander.
 
+**Version : V2** (2026-10-13), qui ajoute le cavalier d'écran [JP8](#cavalier-décran-jp8). La V1, première carte, commandée chez
+JLCPCB le 2026-10-13, est gardée sous l'étiquette [`v1`](https://github.com/Maillouski/M2-IO-Emulator-Board/tree/v1).
+
 ## Ce qu'elle fait
 
 L'idée est simple : on sort la carte E/S Sega de la borne et on met celle-ci à sa place. Elle a les mêmes dimensions, les mêmes
@@ -40,6 +43,20 @@ points de test pour chaque alimentation, et un cavalier (JP1) pour choisir si la
 | RGB arcade | OFF | OFF |
 
 Le même tableau est imprimé sur la carte (en anglais).
+
+## Cavalier d'écran (JP8)
+
+Nouveau dans la V2. JP8 relie la broche D36 du Mega à la masse. Le Mega la lit avec son rappel interne et l'envoie à l'hôte avec
+les autres entrées : l'hôte peut ainsi choisir son écran au démarrage. Une fois la carte dans la borne, changer d'écran ne
+demande que le cavalier, pas de changement de logiciel.
+
+| JP8 | Écran |
+|---|---|
+| posé (ON) | CRT (4:3) : le moniteur arcade d'origine, par un adaptateur HDMI → VGA |
+| retiré (OFF) | écran LVDS (16:9) |
+
+Imprimé sur la carte (en anglais) : SCREEN / ON = CRT (4:3) / OFF = LVDS 16:9. Ce que l'hôte fait de cette entrée dépend de son
+logiciel, qui ne fait pas partie de ce dépôt.
 
 ## Vues 3D
 

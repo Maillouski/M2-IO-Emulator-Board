@@ -2,7 +2,7 @@
 
 [English](BOM.md) | **Français**
 
-Quantités **par carte**. 120 repères, vérifiés un par un contre le schéma.
+Quantités **par carte**. 122 repères, vérifiés un par un contre le schéma (V2, 2026-10-13).
 
 **Import DigiKey :** [`BOM-digikey.csv`](BOM-digikey.csv) (Quantity, Digi-Key Part Number, Manufacturer Part Number,
 Manufacturer, Customer Reference). Le charger dans le gestionnaire de BOM de DigiKey ou dans une myList, puis multiplier par le
@@ -32,8 +32,8 @@ quantité 1, sans taxes ni livraison. Prix et stocks changent : revérifier avan
 | 1 | J13 | VGA (DE-15 HD) femelle, coudée | Amphenol L77HDE15SD1CH4F | L77HDE15SD1CH4F-ND | VIDEO IN |
 | 1 | J14 | JST NH 5 broches, pas 2,5 mm | JST B5P-SHF-1AA | 455-B5P-SHF-1AA-ND | VIDEO OUT |
 | 4 | JP1, JP2-JP4 | barrette 1 × 3 | Würth 61300311121 | 732-5316-ND | JP1 = alimentation de la drive board, JP2-JP4 = ampli vidéo |
-| 3 | JP5-JP7 | barrette 1 × 2 | Würth 61300211121 | 732-5315-ND | terminaison VGA 75 Ω |
-| 7 | SH1-SH7 | cavalier | TE 382811-8 | A26228-ND | vendu par 10 |
+| 4 | JP5-JP8 | barrette 1 × 2 | Würth 61300211121 | 732-5315-ND | JP5-JP7 = terminaison VGA 75 Ω, JP8 = choix de l'écran (V2) |
+| 8 | SH1-SH8 | cavalier | TE 382811-8 | A26228-ND | vendu par 10 |
 | 13 | R1-R13 | 4,7 kΩ 1 % 0805 | YAGEO RC0805FR-074K7L | 311-4.70KCRCT-ND | rappels des entrées |
 | 25 | R14-R37, R46 | 1 kΩ 1 % 0805 | YAGEO RC0805FR-071KL | 311-1.00KCRCT-ND | |
 | 8 | R38-R45 | 10 kΩ 1 % 0805 | YAGEO RC0805FR-0710KL | 311-10.0KCRCT-ND | |

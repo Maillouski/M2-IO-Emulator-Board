@@ -2,7 +2,7 @@
 
 **English** | [Français](BOM.fr.md)
 
-Quantities are **per board**. 120 references, checked one by one against the schematic.
+Quantities are **per board**. 122 references, checked one by one against the schematic (V2, 2026-10-13).
 
 **DigiKey import:** [`BOM-digikey.csv`](BOM-digikey.csv) (Quantity, Digi-Key Part Number, Manufacturer Part Number,
 Manufacturer, Customer Reference). Upload it to the DigiKey BOM Manager or a myList, then multiply by the number of boards.
@@ -31,8 +31,8 @@ shipping. Prices and stock change, so check again before you order.
 | 1 | J13 | VGA (DE-15 HD) female, right angle | Amphenol L77HDE15SD1CH4F | L77HDE15SD1CH4F-ND | VIDEO IN |
 | 1 | J14 | 5-pin JST NH, 2.5 mm | JST B5P-SHF-1AA | 455-B5P-SHF-1AA-ND | VIDEO OUT |
 | 4 | JP1, JP2-JP4 | 1 × 3 pin header | Würth 61300311121 | 732-5316-ND | JP1 = drive board power, JP2-JP4 = video amp |
-| 3 | JP5-JP7 | 1 × 2 pin header | Würth 61300211121 | 732-5315-ND | 75 Ω VGA termination |
-| 7 | SH1-SH7 | jumper | TE 382811-8 | A26228-ND | sold by 10 |
+| 4 | JP5-JP8 | 1 × 2 pin header | Würth 61300211121 | 732-5315-ND | JP5-JP7 = 75 Ω VGA termination, JP8 = screen select (V2) |
+| 8 | SH1-SH8 | jumper | TE 382811-8 | A26228-ND | sold by 10 |
 | 13 | R1-R13 | 4.7 kΩ 1 % 0805 | YAGEO RC0805FR-074K7L | 311-4.70KCRCT-ND | input pull-ups |
 | 25 | R14-R37, R46 | 1 kΩ 1 % 0805 | YAGEO RC0805FR-071KL | 311-1.00KCRCT-ND | |
 | 8 | R38-R45 | 10 kΩ 1 % 0805 | YAGEO RC0805FR-0710KL | 311-10.0KCRCT-ND | |

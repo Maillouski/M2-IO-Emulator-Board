@@ -11,6 +11,9 @@ feedback) and the original arcade monitor.
 > **Status: prototype.** The design passes DRC and ERC, but no board has been built or tested yet. Read
 > [Open points](#open-points) before you order.
 
+**Version: V2** (2026-10-13), which adds the screen jumper [JP8](#screen-jumper-jp8). V1, the first board, ordered from JLCPCB on
+2026-10-13, is kept under the tag [`v1`](https://github.com/Maillouski/M2-IO-Emulator-Board/tree/v1).
+
 ## What it does
 
 The idea is simple: pull the Sega I/O board out of the cabinet and put this one in its place. It has the same size, the same
@@ -37,6 +40,20 @@ supply, and a jumper (JP1) to choose whether the drive board logic runs from the
 | Arcade RGB | OFF | OFF |
 
 The same table is printed on the board.
+
+## Screen jumper (JP8)
+
+New in V2. JP8 ties the Mega's D36 pin to ground. The Mega reads it with its internal pull-up and sends it to the host with the
+other inputs, so the host can choose its screen at start-up. Once the board is in the cabinet, switching screens only takes the
+jumper, not a software change.
+
+| JP8 | Screen |
+|---|---|
+| ON | CRT (4:3): the original arcade monitor, through an HDMI-to-VGA adapter |
+| OFF | LVDS panel (16:9) |
+
+Printed on the board as SCREEN / ON = CRT (4:3) / OFF = LVDS 16:9. What the host does with this input is up to the host
+software, which is not part of this repository.
 
 ## 3D views
 

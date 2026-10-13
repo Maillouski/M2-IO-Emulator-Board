@@ -67,7 +67,8 @@ Check these before you order or power anything:
 1. **J14 pitch.** CN3, CN5, CN6 and J14 use JST NH footprints at **2.5 mm pitch**. On an original Sega board, CN3 and CN5 were
    measured with a caliper at 2.50 mm (pin 1 to pin 10: 22.54 mm; pin 1 to pin 12: 27.42 mm). The 5-pin video plug that J14
    takes has not been measured yet.
-2. **J14 pin order** (R, G, B, sync, ground) is still provisional. Check it against your cabinet's video plug.
+2. **J14 pin order** was checked on a Daytona USA twin cabinet: 1 red, 2 green, 3 blue, 4 sync (black/white striped wire),
+   5 ground (white wire). This is the order of J14.
 3. **Video level.** The amplifier gain (4.02, set by R51-R56) assumes a source that outputs 0.7 V into 75 Ω. This has not been
    measured. Change R54-R56 to adjust it.
 4. **CN1 and CN2** are plain 3M four-wall headers, without ejector latches. The cabinet's CN1 plug was checked to fit.

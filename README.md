@@ -64,9 +64,9 @@ Board: 2 layers, 180 × 190 mm. Gerbers come from the PCB's own plot settings (K
 
 Check these before you order or power anything:
 
-1. **J14 pitch.** CN3, CN5, CN6 and J14 use JST NH footprints at **2.5 mm pitch**. On an original Sega board, CN3 and CN5 were
-   measured with a caliper at 2.50 mm (pin 1 to pin 10: 22.54 mm; pin 1 to pin 12: 27.42 mm). The 5-pin video plug that J14
-   takes has not been measured yet.
+1. **NH connector pitch** was checked. CN3, CN5, CN6 and J14 use JST NH footprints at **2.5 mm pitch**. Caliper measurements
+   on an original Sega board and cabinet: CN3 22.54 mm from pin 1 to pin 10, CN5 27.42 mm from pin 1 to pin 12, and the 5-pin
+   video plug that J14 takes 10.00 mm from pin 1 to pin 5.
 2. **J14 pin order** was checked on a Daytona USA twin cabinet: 1 red, 2 green, 3 blue, 4 sync (black/white striped wire),
    5 ground (white wire). This is the order of J14.
 3. **Video level.** The amplifier gain (4.02, set by R51-R56) assumes a source that outputs 0.7 V into 75 Ω. This has not been

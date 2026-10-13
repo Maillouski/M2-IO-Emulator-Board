@@ -67,9 +67,9 @@ Carte : 2 couches, 180 × 190 mm. Les Gerbers sortent des réglages de tracé en
 
 À vérifier avant de commander ou de mettre sous tension :
 
-1. **Pas de J14.** CN3, CN5, CN6 et J14 utilisent des empreintes JST NH au **pas de 2,5 mm**. Sur une carte Sega d'origine,
-   CN3 et CN5 ont été mesurés au pied à coulisse à 2,50 mm (22,54 mm de la broche 1 à la broche 10 ; 27,42 mm de la broche 1 à
-   la broche 12). La fiche vidéo à 5 broches qui se branche sur J14 n'a pas encore été mesurée.
+1. **Pas des connecteurs NH** : vérifié. CN3, CN5, CN6 et J14 utilisent des empreintes JST NH au **pas de 2,5 mm**. Mesures au
+   pied à coulisse sur une carte Sega d'origine et sur la borne : CN3, 22,54 mm de la broche 1 à la broche 10 ; CN5, 27,42 mm
+   de la broche 1 à la broche 12 ; fiche vidéo à 5 broches de J14, 10,00 mm de la broche 1 à la broche 5.
 2. **Ordre des broches de J14** : vérifié sur une borne Daytona USA twin : 1 rouge, 2 vert, 3 bleu, 4 synchro (fil noir rayé
    blanc), 5 masse (fil blanc). C'est l'ordre de J14.
 3. **Niveau vidéo.** Le gain de l'ampli (4,02, fixé par R51-R56) suppose une source qui sort 0,7 V sur 75 Ω. Ce n'est pas mesuré.

@@ -94,16 +94,9 @@ Carte : 2 couches, 180 × 190 mm. Les Gerbers sortent des réglages de tracé en
 
 À vérifier avant de commander ou de mettre sous tension :
 
-1. **Pas des connecteurs NH** : vérifié. CN3, CN5, CN6 et J14 utilisent des empreintes JST NH au **pas de 2,5 mm**. Mesures au
-   pied à coulisse sur une carte Sega d'origine et sur la borne : CN3, 22,54 mm de la broche 1 à la broche 10 ; CN5, 27,42 mm
-   de la broche 1 à la broche 12 ; fiche vidéo à 5 broches de J14, 10,00 mm de la broche 1 à la broche 5.
-2. **Ordre des broches de J14** : vérifié sur une borne Daytona USA twin : 1 rouge, 2 vert, 3 bleu, 4 synchro (fil noir rayé
-   blanc), 5 masse (fil blanc). C'est l'ordre de J14.
-3. **Niveau vidéo.** Le gain de l'ampli (4,02, fixé par R51-R56) suppose une source qui sort 0,7 V sur 75 Ω. Ce n'est pas mesuré.
-   Changer R54-R56 pour l'ajuster.
-4. **CN1 et CN2** sont des embases 3M simples à quatre murs, sans leviers d'éjection. On a vérifié que la fiche CN1 de la borne
+1. **CN1 et CN2** sont des embases 3M simples à quatre murs, sans leviers d'éjection. On a vérifié que la fiche CN1 de la borne
    y entre.
-5. **Le firmware** ([`firmware/`](firmware/m2io-mega)) a été essayé sur un Mega nu : environ 1 000 trames par seconde sans perte,
+2. **Le firmware** ([`firmware/`](firmware/m2io-mega)) a été essayé sur un Mega nu : environ 1 000 trames par seconde sans perte,
    les 16 sorties une à une par des fils de bouclage, le chien de garde de 200 ms. Il n'a pas encore tourné dans une borne.
 
 ## Modèles 3D

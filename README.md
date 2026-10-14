@@ -90,15 +90,8 @@ Board: 2 layers, 180 × 190 mm. Gerbers come from the PCB's own plot settings (K
 
 Check these before you order or power anything:
 
-1. **NH connector pitch** was checked. CN3, CN5, CN6 and J14 use JST NH footprints at **2.5 mm pitch**. Caliper measurements
-   on an original Sega board and cabinet: CN3 22.54 mm from pin 1 to pin 10, CN5 27.42 mm from pin 1 to pin 12, and the 5-pin
-   video plug that J14 takes 10.00 mm from pin 1 to pin 5.
-2. **J14 pin order** was checked on a Daytona USA twin cabinet: 1 red, 2 green, 3 blue, 4 sync (black/white striped wire),
-   5 ground (white wire). This is the order of J14.
-3. **Video level.** The amplifier gain (4.02, set by R51-R56) assumes a source that outputs 0.7 V into 75 Ω. This has not been
-   measured. Change R54-R56 to adjust it.
-4. **CN1 and CN2** are plain 3M four-wall headers, without ejector latches. The cabinet's CN1 plug was checked to fit.
-5. **Firmware** ([`firmware/`](firmware/m2io-mega)) was tested on a bare Mega: about 1 000 frames per second with none lost, the
+1. **CN1 and CN2** are plain 3M four-wall headers, without ejector latches. The cabinet's CN1 plug was checked to fit.
+2. **Firmware** ([`firmware/`](firmware/m2io-mega)) was tested on a bare Mega: about 1 000 frames per second with none lost, the
    16 outputs one by one through loopback wires, the 200 ms watchdog. It has not run in a cabinet yet.
 
 ## 3D models

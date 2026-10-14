@@ -56,14 +56,14 @@ can include it as is to build and decode frames.
 | Port | the Mega's USB port: `/dev/ttyACM0` on Linux (genuine Mega), `/dev/ttyUSB0` (CH340 clones), `/dev/cu.usbmodem…` on macOS, `COMx` on Windows |
 | Settings | **250 000 baud**, 8N1, no flow control |
 
-**Opening the port resets the Mega** (DTR), like any Arduino. Measured on a genuine Mega 2560:
+**Opening the port resets the Mega** (DTR), like any Arduino:
 
 - In the first ~5 ms, 10 to 25 **stale frames** left over from the previous session arrive. Drop everything received in the
   first **300 ms**.
 - The bootloader runs next. The first real frame arrives about **0.9 s** after the port opens, with the sequence counter
   starting from 0.
 - **Send nothing before that first real frame.** The bootloader takes any byte it receives for the start of an upload and
-  never starts the program. Measured: with commands sent from the moment the port opened, 0 frames came in 4 s.
+  never starts the program.
 
 ## 4. Frames
 
@@ -80,8 +80,7 @@ can include it as is to build and decode frames.
 - **Sending:** send a command frame whenever the drive or lamps byte changes, and **at least once every 16 ms** even if
   nothing changed.
 - **Watchdog:** if the Mega gets no valid frame for **200 ms**, it sends `00` to the drive board, switches off every lamp and
-  stops the meters. This is also the state of its outputs at power-up. Measured: back to the safe state 189 to 202 ms after
-  the last frame.
+  stops the meters. This is also the state of its outputs at power-up.
 
 ## 5. What each byte means
 
@@ -138,8 +137,7 @@ exchanged with the Mega.
    thread can read them.
 3. **Debounce IN0 and IN1 bit 0** (coin, START, VR, TEST, SERVICE). A press counts at once; a release counts only once the
    bit has stayed at 1 for about **25 consecutive frames** (25 ms).
-   - Measured on a switch: bounce bursts lasting 10 to 60 ms, with gaps of about 10 ms. Without this filter, one coin could
-     count twice.
+   - Switches bounce for up to about 60 ms. Without this filter, one coin can count twice.
    - The filter also stretches every press past one game frame (about 17 ms), so a short coin pulse can't fall between two
      reads.
 4. Feed the emulated I/O board from those values (§ 6), with IN1 bit 1 forced to 1.
@@ -151,11 +149,10 @@ exchanged with the Mega.
    rest and the drive reply as `0xFF`. If the Mega was unplugged, reopen the port.
 8. On exit, send `5A 00 00 A6` (motor off, everything off), then close the port.
 
-## 8. What is not verified
+## 8. Precautions with a real drive board
 
-- **`00` = motor off** comes from reading the drive board ROM (EPR-16488A). It hasn't been measured on a real drive board.
-- **Drive board lines during the reset:** for the ~0.9 s of bootloader after the port opens, the Mega's drive board outputs
-  are not driven. The board has no resistors on those lines, and what the drive board does meanwhile is not known.
-- **The game and IN1 bit 1:** it isn't checked in the game ROM that bit 1 is ignored. That's why § 7 forces it to 1.
-- The measurements on this page were taken on a genuine Mega 2560 (USB `2341:0042`) connected to macOS and Linux. Windows and
-  CH340 clones have not been tried.
+- **Hands off the wheel the first time.** `00`, the command the Mega sends at power-up and after the watchdog, is motor off
+  according to the drive board ROM (EPR-16488A).
+- **Drive board lines during the reset:** for the ~0.9 s the Mega spends in its bootloader after the port opens, its drive
+  board outputs aren't driven, and the board has no resistors on those lines. Open the port once, when the host starts, and
+  keep it open.

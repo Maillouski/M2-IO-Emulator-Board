@@ -28,8 +28,8 @@ const uint8_t STATE_HDR = 0xA5;         // Mega -> host
 const uint8_t CMD_HDR = 0x5A;           // host -> Mega
 const uint8_t STATE_LEN = 9;
 const uint8_t CMD_LEN = 4;
-const uint8_t DRIVE_NEUTRAL = 0x00;     // 0x0X with X & 7 < 5 and X != A: motor off (read from the drive board ROM
-                                        // EPR-16488A; not measured on a real drive board)
+const uint8_t DRIVE_NEUTRAL = 0x00;     // 0x0X with X & 7 < 5 and X != A: motor off (from the drive board ROM
+                                        // EPR-16488A)
 const uint8_t LAMPS_OFF = 0x00;
 const uint16_t LINK_TIMEOUT_MS = 200;   // no valid frame from the host: neutral command, lamps and meters off
 

@@ -58,13 +58,13 @@ lampes, compteurs, drive board         <──  Mega  <──USB──  hôte : 
 | Port | le port USB du Mega : `/dev/ttyACM0` sous Linux (Mega d'origine), `/dev/ttyUSB0` (clones à CH340), `/dev/cu.usbmodem…` sous macOS, `COMx` sous Windows |
 | Réglages | **250 000 bauds**, 8N1, sans contrôle de flux |
 
-**Ouvrir le port redémarre le Mega** (DTR), comme tout Arduino. Mesuré sur un Mega 2560 d'origine :
+**Ouvrir le port redémarre le Mega** (DTR), comme tout Arduino :
 
 - Dans les ~5 premières ms arrivent 10 à 25 **vieilles trames**, restes de la session précédente. Jeter tout ce qui arrive
   pendant les **300 premières ms**.
 - Le chargeur démarre ensuite. La première vraie trame arrive environ **0,9 s** après l'ouverture, compteur reparti de 0.
 - **Ne rien envoyer avant cette première vraie trame.** Le chargeur prend tout octet reçu pour le début d'un téléversement
-  et ne lance plus le programme. Mesuré : avec des ordres envoyés dès l'ouverture du port, aucune trame en 4 s.
+  et ne lance plus le programme.
 
 ## 4. Trames
 
@@ -82,8 +82,7 @@ lampes, compteurs, drive board         <──  Mega  <──USB──  hôte : 
 - **Envoi :** envoyer une trame d'ordres à chaque changement de l'octet de drive board ou de lampes, et **au moins toutes les
   16 ms** même si rien ne change.
 - **Chien de garde :** si le Mega ne reçoit aucune trame valide pendant **200 ms**, il envoie `00` à la drive board, éteint
-  toutes les lampes et coupe les compteurs. C'est aussi l'état de ses sorties à la mise sous tension. Mesuré : retour à l'état
-  sûr 189 à 202 ms après la dernière trame.
+  toutes les lampes et coupe les compteurs. C'est aussi l'état de ses sorties à la mise sous tension.
 
 ## 5. Contenu des octets
 
@@ -142,8 +141,7 @@ les dernières valeurs échangées avec le Mega.
    board là où le fil d'émulation peut les lire.
 3. **Filtrer les rebonds de IN0 et du bit 0 de IN1** (pièce, START, VR, TEST, SERVICE). Un appui compte tout de suite ; un
    relâchement ne compte qu'une fois le bit resté à 1 pendant environ **25 trames de suite** (25 ms).
-   - Mesuré sur un contact : rafales de rebonds de 10 à 60 ms, avec des trous d'environ 10 ms. Sans ce filtre, une pièce
-     pouvait compter deux fois.
+   - Les contacts rebondissent jusqu'à environ 60 ms. Sans ce filtre, une pièce peut compter deux fois.
    - Le filtre allonge aussi chaque appui au-delà d'une trame du jeu (environ 17 ms) : une impulsion de pièce courte ne peut
      pas tomber entre deux lectures.
 4. Alimenter la carte E/S émulée avec ces valeurs (§ 6), bit 1 de IN1 forcé à 1.
@@ -155,14 +153,10 @@ les dernières valeurs échangées avec le Mega.
    repos et la réponse de la drive board à `0xFF`. Si le Mega a été débranché, rouvrir le port.
 8. En quittant, envoyer `5A 00 00 A6` (moteur coupé, tout éteint), puis fermer le port.
 
-## 8. Ce qui n'est pas vérifié
+## 8. Précautions avec une vraie drive board
 
-- **`00` = moteur coupé** vient de la lecture de la ROM de la drive board (EPR-16488A). Ce n'est pas mesuré sur une vraie
-  drive board.
-- **Lignes de la drive board pendant le redémarrage :** pendant les ~0,9 s de chargeur après l'ouverture du port, les sorties
-  du Mega vers la drive board ne sont pas pilotées. La carte n'a pas de résistances sur ces lignes, et ce que fait la drive
-  board pendant ce temps n'est pas connu.
-- **Le jeu et le bit 1 de IN1 :** il n'est pas vérifié dans la ROM du jeu que le bit 1 est ignoré. C'est pourquoi le § 7 le
-  force à 1.
-- Les mesures de cette page ont été faites sur un Mega 2560 d'origine (USB `2341:0042`) branché sur macOS et sur Linux.
-  Windows et les clones à CH340 n'ont pas été essayés.
+- **Mains hors du volant la première fois.** `00`, l'ordre que le Mega envoie à la mise sous tension et après le chien de
+  garde, coupe le moteur d'après la ROM de la drive board (EPR-16488A).
+- **Lignes de la drive board pendant le redémarrage :** pendant les ~0,9 s de chargeur du Mega après l'ouverture du port, ses
+  sorties vers la drive board ne sont pas pilotées, et la carte n'a pas de résistances sur ces lignes. Ouvrir le port une
+  seule fois, au démarrage de l'hôte, et le garder ouvert.

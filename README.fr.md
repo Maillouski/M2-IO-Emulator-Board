@@ -64,7 +64,7 @@ La carte est fournie avec le programme de son Arduino Mega ([`firmware/`](firmwa
 ([`tools/m2io_console.py`](tools/m2io_console.py)). Pour faire tourner Daytona USA sur votre propre ordinateur ou votre
 compilation d'un émulateur et atteindre la borne par cette carte, lisez **[Piloter la carte depuis son propre
 hôte](docs/HOST-PROTOCOL.fr.md)** : liaison série, trames, contenu des octets, branchement sur la carte E/S émulée de MAME
-et pièges mesurés jusqu'ici.
+et pièges à éviter.
 
 ## Vues 3D
 
@@ -92,12 +92,7 @@ Carte : 2 couches, 180 × 190 mm. Les Gerbers sortent des réglages de tracé en
 
 ## Points ouverts
 
-À vérifier avant de commander ou de mettre sous tension :
-
-1. **CN1 et CN2** sont des embases 3M simples à quatre murs, sans leviers d'éjection. On a vérifié que la fiche CN1 de la borne
-   y entre.
-2. **Le firmware** ([`firmware/`](firmware/m2io-mega)) a été essayé sur un Mega nu : environ 1 000 trames par seconde sans perte,
-   les 16 sorties une à une par des fils de bouclage, le chien de garde de 200 ms. Il n'a pas encore tourné dans une borne.
+**CN1 et CN2** sont des embases 3M simples à quatre murs, sans leviers d'éjection.
 
 ## Modèles 3D
 

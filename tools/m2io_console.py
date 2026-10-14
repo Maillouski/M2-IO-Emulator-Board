@@ -12,7 +12,7 @@ drive board command and a lamps byte. Protocol: docs/HOST-PROTOCOL.md and firmwa
 
 Opening the port resets the Mega (DTR): about 0.9 s of bootloader before the first frames. Nothing is sent before the
 first frame after that reset: the bootloader takes any byte it receives for the start of an upload and never starts the
-program (measured: commands sent from the moment the port opens, 0 frames in 4 s; nothing sent, first frame at 0.90 s).
+program.
 Frames from the first 0.3 s (left over from the previous session) are dropped.
 Lamp bits 0-1 drive the original coin meters: every pulse adds one coin to the meter.
 """

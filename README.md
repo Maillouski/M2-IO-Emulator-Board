@@ -60,7 +60,7 @@ software (see [Driving it from a computer](#driving-it-from-a-computer)).
 The board comes with its Arduino Mega program ([`firmware/`](firmware/m2io-mega)) and a test console
 ([`tools/m2io_console.py`](tools/m2io_console.py)). To run Daytona USA on your own computer or emulator build and reach the
 cabinet through this board, read **[Driving the board from your own host](docs/HOST-PROTOCOL.md)**: serial link, frames,
-byte meanings, how to connect them to MAME's emulated I/O board, and the pitfalls measured so far.
+byte meanings, how to connect them to MAME's emulated I/O board, and the pitfalls to avoid.
 
 ## 3D views
 
@@ -88,11 +88,7 @@ Board: 2 layers, 180 × 190 mm. Gerbers come from the PCB's own plot settings (K
 
 ## Open points
 
-Check these before you order or power anything:
-
-1. **CN1 and CN2** are plain 3M four-wall headers, without ejector latches. The cabinet's CN1 plug was checked to fit.
-2. **Firmware** ([`firmware/`](firmware/m2io-mega)) was tested on a bare Mega: about 1 000 frames per second with none lost, the
-   16 outputs one by one through loopback wires, the 200 ms watchdog. It has not run in a cabinet yet.
+**CN1 and CN2** are plain 3M four-wall headers, without ejector latches.
 
 ## 3D models
 

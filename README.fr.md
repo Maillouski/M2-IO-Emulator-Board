@@ -56,7 +56,15 @@ demande que le cavalier, pas de changement de logiciel.
 | retiré (OFF) | écran LVDS (16:9) |
 
 Imprimé sur la carte (en anglais) : SCREEN / ON = CRT (4:3) / OFF = LVDS 16:9. Ce que l'hôte fait de cette entrée dépend de son
-logiciel, qui ne fait pas partie de ce dépôt.
+logiciel (voir [Piloter la carte depuis un ordinateur](#piloter-la-carte-depuis-un-ordinateur)).
+
+## Piloter la carte depuis un ordinateur
+
+La carte est fournie avec le programme de son Arduino Mega ([`firmware/`](firmware/m2io-mega)) et une console d'essai
+([`tools/m2io_console.py`](tools/m2io_console.py)). Pour faire tourner Daytona USA sur votre propre ordinateur ou votre
+compilation d'un émulateur et atteindre la borne par cette carte, lisez **[Piloter la carte depuis son propre
+hôte](docs/HOST-PROTOCOL.fr.md)** : liaison série, trames, contenu des octets, branchement sur la carte E/S émulée de MAME
+et pièges mesurés jusqu'ici.
 
 ## Vues 3D
 
@@ -75,8 +83,10 @@ Rendus KiCad 10 tirés des fichiers de ce dépôt.
 |---|---|
 | `kicad/` | projet KiCad 10 : schéma, PCB, règles de conception, librairie d'empreintes du projet (`interface-borne.pretty`), modèles 3D |
 | `fabrication/` | Gerbers, fichiers de perçage Excellon et leurs plans (`gerbers/`), les mêmes fichiers en zip pour le fabricant, fichier de placement ; BOM et CPL JLCPCB pour l'assemblage des CMS ([`jlcpcb/`](fabrication/jlcpcb/README.fr.md)) |
+| `firmware/` | programme de l'Arduino Mega (`m2io-mega/`) et son essai sur PC, sans Mega (`test/`) |
+| `tools/` | console d'essai : joue le rôle de l'hôte depuis n'importe quel ordinateur (Python 3 + pyserial) |
 | `bom/` | BOM complète ([`BOM.fr.md`](bom/BOM.fr.md), [English](bom/BOM.md)) et fichier d'import DigiKey ([`BOM-digikey.csv`](bom/BOM-digikey.csv)) |
-| `docs/` | schéma en PDF, rendus de la carte |
+| `docs/` | [protocole de l'hôte](docs/HOST-PROTOCOL.fr.md), schéma en PDF, rendus de la carte |
 
 Carte : 2 couches, 180 × 190 mm. Les Gerbers sortent des réglages de tracé enregistrés dans le PCB (KiCad 10).
 
@@ -93,7 +103,8 @@ Carte : 2 couches, 180 × 190 mm. Les Gerbers sortent des réglages de tracé en
    Changer R54-R56 pour l'ajuster.
 4. **CN1 et CN2** sont des embases 3M simples à quatre murs, sans leviers d'éjection. On a vérifié que la fiche CN1 de la borne
    y entre.
-5. **Le firmware** du Mega ne fait pas partie de ce dépôt.
+5. **Le firmware** ([`firmware/`](firmware/m2io-mega)) a été essayé sur un Mega nu : environ 1 000 trames par seconde sans perte,
+   les 16 sorties une à une par des fils de bouclage, le chien de garde de 200 ms. Il n'a pas encore tourné dans une borne.
 
 ## Modèles 3D
 
@@ -114,3 +125,4 @@ Projet non affilié à SEGA ni approuvé par SEGA.
 © 2026 Nicolas Mailloux. **CC BY-NC-SA 4.0** — voir [`LICENSE`](LICENSE) (texte officiel en anglais).
 Vous pouvez fabriquer, utiliser, modifier et partager cette carte, à condition de citer l'auteur, de garder les crédits et de
 partager vos modifications sous la même licence. **Aucun usage commercial** : ne vendez ni la carte, ni les fichiers, ni un dérivé.
+Le firmware et les outils sont sous la même licence.

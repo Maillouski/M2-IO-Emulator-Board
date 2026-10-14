@@ -53,7 +53,14 @@ jumper, not a software change.
 | OFF | LVDS panel (16:9) |
 
 Printed on the board as SCREEN / ON = CRT (4:3) / OFF = LVDS 16:9. What the host does with this input is up to the host
-software, which is not part of this repository.
+software (see [Driving it from a computer](#driving-it-from-a-computer)).
+
+## Driving it from a computer
+
+The board comes with its Arduino Mega program ([`firmware/`](firmware/m2io-mega)) and a test console
+([`tools/m2io_console.py`](tools/m2io_console.py)). To run Daytona USA on your own computer or emulator build and reach the
+cabinet through this board, read **[Driving the board from your own host](docs/HOST-PROTOCOL.md)**: serial link, frames,
+byte meanings, how to connect them to MAME's emulated I/O board, and the pitfalls measured so far.
 
 ## 3D views
 
@@ -72,8 +79,10 @@ Rendered with KiCad 10 from the files in this repository.
 |---|---|
 | `kicad/` | KiCad 10 project: schematic, PCB, design rules, project footprint library (`interface-borne.pretty`), 3D models |
 | `fabrication/` | Gerbers, Excellon drill files and drill maps (`gerbers/`), the same files zipped for the fab, pick-and-place file; JLCPCB BOM and CPL for SMD assembly ([`jlcpcb/`](fabrication/jlcpcb/README.md)) |
+| `firmware/` | Arduino Mega program (`m2io-mega/`) and its PC test without a Mega (`test/`) |
+| `tools/` | Test console: plays the host's part from any computer (Python 3 + pyserial) |
 | `bom/` | Full BOM ([`BOM.md`](bom/BOM.md)) and DigiKey import file ([`BOM-digikey.csv`](bom/BOM-digikey.csv)) |
-| `docs/` | Schematic PDF, board renders |
+| `docs/` | [Host protocol](docs/HOST-PROTOCOL.md), schematic PDF, board renders |
 
 Board: 2 layers, 180 × 190 mm. Gerbers come from the PCB's own plot settings (KiCad 10).
 
@@ -89,7 +98,8 @@ Check these before you order or power anything:
 3. **Video level.** The amplifier gain (4.02, set by R51-R56) assumes a source that outputs 0.7 V into 75 Ω. This has not been
    measured. Change R54-R56 to adjust it.
 4. **CN1 and CN2** are plain 3M four-wall headers, without ejector latches. The cabinet's CN1 plug was checked to fit.
-5. **Firmware** for the Mega is not part of this repository.
+5. **Firmware** ([`firmware/`](firmware/m2io-mega)) was tested on a bare Mega: about 1 000 frames per second with none lost, the
+   16 outputs one by one through loopback wires, the 200 ms watchdog. It has not run in a cabinet yet.
 
 ## 3D models
 
@@ -109,3 +119,4 @@ Not affiliated with or endorsed by SEGA.
 © 2026 Nicolas Mailloux. **CC BY-NC-SA 4.0** — see [`LICENSE`](LICENSE).
 You may build, use, modify and share this board, as long as you credit the author, keep the credits, and share changes under the
 same license. **No commercial use**: don't sell the board, the files or a derivative.
+The firmware and the tools are under the same license.

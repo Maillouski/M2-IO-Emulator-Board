@@ -21,8 +21,7 @@ JLCPCB makes the board and solders the 83 SMD parts. You solder the through-hole
   rails and no fiducials. The closest SMD part is 10 mm from the board edge.
 - **Before paying,** check the placement preview:
   - **U2 (74HCT86, SOIC-14) and U3 (OPA3355, TSSOP-14):** the pin-1 dot of each part must sit on pin 1 of its footprint. The CPL
-    rotates both parts by −90° relative to KiCad, to match the EasyEDA footprints JLCPCB places from. The correction is
-    measured on those footprints, but has not yet been confirmed on a real order.
+    rotates both parts by −90° relative to KiCad, to match the EasyEDA footprints JLCPCB places from.
   - **Resistors and capacitors:** they are not polarised and need no rotation correction.
 
 ## Parts placed by JLCPCB

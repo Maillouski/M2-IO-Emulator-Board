@@ -22,7 +22,7 @@ JLCPCB fabrique la carte et soude les 83 composants CMS. Vous soudez vous-même 
 - **Avant de payer,** vérifiez l'aperçu de placement :
   - **U2 (74HCT86, SOIC-14) et U3 (OPA3355, TSSOP-14) :** le point de la broche 1 de chaque pièce doit tomber sur la broche 1
     de son empreinte. Le CPL tourne ces deux pièces de −90° par rapport à KiCad, pour suivre les empreintes EasyEDA dont JLCPCB
-    se sert pour placer. La correction est mesurée sur ces empreintes, mais n'a pas encore été confirmée sur une vraie commande.
+    se sert pour placer.
   - **Résistances et condensateurs :** ils ne sont pas polarisés et n'ont besoin d'aucune correction de rotation.
 
 ## Pièces posées par JLCPCB

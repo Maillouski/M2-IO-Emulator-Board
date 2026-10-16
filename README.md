@@ -47,7 +47,7 @@ adapter (not yet tried on a real board).
 ## Composite sync
 
 U2 (74HCT86) builds the composite sync for the monitor from H and V, after the circuit of
-[Tomi Engdahl](https://www.epanorama.net/circuits/vga2rgbs.html). Each sync is compared (XOR) with its own average, taken by an
+[Tomi Engdahl](https://www.epanorama.net/circuits/vga2rgbs.html), pointed out by Zebidee on the ArcadeControls.com forum. Each sync is compared (XOR) with its own average, taken by an
 RC filter (R66 + C47 for H, R67 + C48 for V: 2.2 kΩ, 22 µF), so its pulses always come out positive; the two are then combined
 and inverted. The result is a **negative** composite sync whatever the polarity of H and V at the input, which is what the
 original monitor expects. After a change of polarity (new video mode), the filters settle within a fraction of a second. It
@@ -139,7 +139,7 @@ The Arduino Mega model in `kicad/3d/` is derived from Arduino's CAD files (CC BY
 
 Sources used for this board: SEGA Daytona USA manuals; MAME (Dirk Best for the Model 1 I/O board; R. Belmont, O. Galibert,
 ElSemi, A. Salese, M. Daniels for Model 2); M2Pac by BigPanik (Gamoover); DaytonaUSB by SailorSat; BackForceFeeder by njz3; MEGA
-adapters by Tibal; the MiSTer project (video to arcade monitor); Tomi Engdahl (composite sync circuit).
+adapters by Tibal; the MiSTer project (video to arcade monitor); Tomi Engdahl (composite sync circuit); Zebidee on the ArcadeControls.com forum.
 
 Not affiliated with or endorsed by SEGA.
 

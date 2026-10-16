@@ -51,7 +51,7 @@ HDMI → VGA (pas encore essayé sur une vraie carte).
 ## Synchro composite
 
 U2 (74HCT86) fabrique la synchro composite du moniteur à partir de H et V, d'après le circuit de
-[Tomi Engdahl](https://www.epanorama.net/circuits/vga2rgbs.html). Chaque synchro est comparée (XOR) à sa propre moyenne, prise
+[Tomi Engdahl](https://www.epanorama.net/circuits/vga2rgbs.html), signalé par Zebidee sur le forum ArcadeControls.com. Chaque synchro est comparée (XOR) à sa propre moyenne, prise
 par un filtre RC (R66 + C47 pour H, R67 + C48 pour V : 2,2 kΩ, 22 µF) : ses impulsions sortent donc toujours positives ; les
 deux sont ensuite combinées puis inversées. Le résultat est une synchro composite **négative** quelle que soit la polarité de H
 et V à l'entrée, ce qu'attend le moniteur d'origine. Après un changement de polarité (nouveau mode vidéo), les filtres se
@@ -146,7 +146,7 @@ utilisent des modèles simplifiés faits pour ce projet.
 
 Sources utilisées pour cette carte : manuels SEGA de Daytona USA ; MAME (Dirk Best pour la carte E/S Model 1 ; R. Belmont,
 O. Galibert, ElSemi, A. Salese, M. Daniels pour le Model 2) ; M2Pac de BigPanik (Gamoover) ; DaytonaUSB de SailorSat ;
-BackForceFeeder de njz3 ; adaptateurs MEGA de Tibal ; le projet MiSTer (vidéo vers moniteur arcade) ; Tomi Engdahl (circuit de synchro composite).
+BackForceFeeder de njz3 ; adaptateurs MEGA de Tibal ; le projet MiSTer (vidéo vers moniteur arcade) ; Tomi Engdahl (circuit de synchro composite) ; Zebidee sur le forum ArcadeControls.com.
 
 Projet non affilié à SEGA ni approuvé par SEGA.
 

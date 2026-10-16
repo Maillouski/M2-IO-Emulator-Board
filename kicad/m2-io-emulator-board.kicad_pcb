@@ -38891,8 +38891,32 @@
 			(justify left bottom)
 		)
 	)
+	(gr_text "Composite sync: Tomi Engdahl"
+		(at 104.5 160.4 0)
+		(layer "F.SilkS")
+		(uuid "4880c8bd-ffef-4bb3-b9bd-a2d4894de5c7")
+		(effects
+			(font
+				(size 1.3 1.3)
+				(thickness 0.169)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "ArcadeControls.com forum: Zebidee"
+		(at 104.5 162.48 0)
+		(layer "F.SilkS")
+		(uuid "28d9f870-f887-473d-9ab6-00d0c723b274")
+		(effects
+			(font
+				(size 1.3 1.3)
+				(thickness 0.169)
+			)
+			(justify left bottom)
+		)
+	)
 	(gr_text "Thanks to all. Not affiliated with or endorsed by SEGA."
-		(at 104.5 162 0)
+		(at 104.5 166.16 0)
 		(layer "F.SilkS")
 		(uuid "a81e32e6-4828-4e4f-b450-9f6c2e7c89ea")
 		(effects
@@ -39034,7 +39058,7 @@
 	(gr_text "V3"
 		(at 169.913804 135.46 0)
 		(layer "F.SilkS")
-		(uuid "6ac56ea5-e75b-4cf4-aa95-8f2c93eaff0a")
+		(uuid "e17899e1-3fa9-4c21-9742-f97e0d4d9e09")
 		(effects
 			(font
 				(size 1.8 1.8)
@@ -75677,12 +75701,13 @@
 	)
 	(group "Credits"
 		(uuid "b95ee3d1-3060-4187-897d-62a7b6125cb7")
-		(members "32a9a2c8-ebb0-402e-b8e9-d7f498fcf1ff" "3cad0f6f-129b-4547-84f6-fd7b006853b1"
-			"44f3a08a-5582-4395-a4df-08e05cad2e52" "6ac56ea5-e75b-4cf4-aa95-8f2c93eaff0a"
+		(members "28d9f870-f887-473d-9ab6-00d0c723b274" "32a9a2c8-ebb0-402e-b8e9-d7f498fcf1ff"
+			"3cad0f6f-129b-4547-84f6-fd7b006853b1" "44f3a08a-5582-4395-a4df-08e05cad2e52"
+			"4880c8bd-ffef-4bb3-b9bd-a2d4894de5c7" "6ac56ea5-e75b-4cf4-aa95-8f2c93eaff0a"
 			"833a4af0-08af-4443-a8b4-0bb6a1fe6a5d" "9e0b8de9-4437-40ec-ac01-3bc5f5d61a7f"
 			"a81e32e6-4828-4e4f-b450-9f6c2e7c89ea" "b1936d7d-1726-4446-ab91-e27d5365dd63"
 			"b6d0365f-5223-4756-8d10-bb64816138ab" "d386013a-1502-47ac-869a-e45ab31ca66e"
-			"f89d1cb5-9a34-41b8-b62e-c91d0bb3d21e"
+			"e17899e1-3fa9-4c21-9742-f97e0d4d9e09" "f89d1cb5-9a34-41b8-b62e-c91d0bb3d21e"
 		)
 	)
 	(group "Fleche valeur C15"

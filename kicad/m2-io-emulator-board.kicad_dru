@@ -10,3 +10,36 @@
 (rule "U3: 0.25 mm tracks inside the courtyard"
   (condition "A.Type == 'Track' && A.intersectsCourtyard('U3')")
   (constraint track_width (min 0.2mm) (opt 0.25mm) (max 0.4mm)))
+
+# V3: the board minimum is 0.2 mm clearance and 0.2 mm track (Board Setup); no rule goes below it.
+# U4 CS5213 (QFN-32 4 x 4, 0.4 mm pitch, 0.2 mm pads): 0.2 mm between pads, so tracks are exactly 0.2 mm.
+(rule "U4: 0.2 mm clearance inside the courtyard"
+  (condition "A.intersectsCourtyard('U4')")
+  (constraint clearance (min 0.2mm)))
+(rule "U4: 0.2 mm tracks inside the courtyard"
+  (condition "A.Type == 'Track' && A.intersectsCourtyard('U4')")
+  (constraint track_width (min 0.2mm) (opt 0.2mm) (max 0.2mm)))
+
+# U5 NX3303X (QFN-32 5 x 5, 0.5 mm pitch, 0.25 mm pads): 0.25 mm between pads.
+(rule "U5: 0.2 mm clearance inside the courtyard"
+  (condition "A.intersectsCourtyard('U5')")
+  (constraint clearance (min 0.2mm)))
+(rule "U5: 0.2-0.3 mm tracks inside the courtyard"
+  (condition "A.Type == 'Track' && A.intersectsCourtyard('U5')")
+  (constraint track_width (min 0.2mm) (opt 0.2mm) (max 0.3mm)))
+
+# U7 TS5V330 (TSSOP-16, 0.65 mm pitch, like U3).
+(rule "U7: 0.2 mm clearance inside the courtyard"
+  (condition "A.intersectsCourtyard('U7')")
+  (constraint clearance (min 0.2mm)))
+(rule "U7: 0.25 mm tracks inside the courtyard"
+  (condition "A.Type == 'Track' && A.intersectsCourtyard('U7')")
+  (constraint track_width (min 0.2mm) (opt 0.25mm) (max 0.4mm)))
+
+# J15 HDMI (0.5 mm pitch, 0.3 mm pads): 0.2 mm between pads, less than Default (0.25) and GND (0.3).
+(rule "J15: 0.2 mm clearance inside the courtyard"
+  (condition "A.intersectsCourtyard('J15')")
+  (constraint clearance (min 0.2mm)))
+(rule "J15: 0.2-0.3 mm tracks inside the courtyard"
+  (condition "A.Type == 'Track' && A.intersectsCourtyard('J15')")
+  (constraint track_width (min 0.2mm) (opt 0.2mm) (max 0.3mm)))

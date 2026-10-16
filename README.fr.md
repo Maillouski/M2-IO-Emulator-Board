@@ -11,8 +11,10 @@ d'origine (retour de force) et moniteur arcade d'origine.
 > **État : prototype.** Le design passe la DRC et l'ERC, mais aucune carte n'a encore été fabriquée ni testée. Lire les
 > [points ouverts](#points-ouverts) avant de commander.
 
-**Version : V2** (2026-10-13), qui ajoute le cavalier d'écran [JP8](#cavalier-décran-jp8). La V1, première carte, commandée chez
-JLCPCB le 2026-10-13, est gardée sous l'étiquette [`v1`](https://github.com/Maillouski/M2-IO-Emulator-Board/tree/v1).
+**Version : V3** (2026-10-16), qui ajoute une [entrée HDMI](#entrée-hdmi-v3) avec son propre convertisseur HDMI → VGA et une
+sortie audio stéréo. La V2 (cavalier d'écran JP8) est gardée sous l'étiquette
+[`v2`](https://github.com/Maillouski/M2-IO-Emulator-Board/tree/v2), et la V1, première carte, commandée chez JLCPCB le
+2026-10-13, sous l'étiquette [`v1`](https://github.com/Maillouski/M2-IO-Emulator-Board/tree/v1).
 
 ## Ce qu'elle fait
 
@@ -28,8 +30,9 @@ d'origine pilotait :
   fonctionner.
 - **Retour de force** — la drive board d'origine reste dans la borne et reçoit ses ordres du Mega : le volant garde son retour de force
   d'origine.
-- **Vidéo** — une entrée VGA va au moniteur arcade d'origine, avec la synchro composite fabriquée sur la carte. Un petit ampli
-  vidéo, activable par cavaliers, remonte le signal d'une source PC ou d'un adaptateur HDMI-VGA au niveau qu'attend le tube.
+- **Vidéo** — une entrée HDMI (V3) ou une entrée VGA va au moniteur arcade d'origine, avec la synchro composite fabriquée sur la
+  carte. Un petit ampli vidéo, activable par cavaliers, remonte le signal au niveau qu'attend le tube.
+- **Son** — l'audio transporté par l'entrée HDMI sort sur deux prises RCA (V3).
 
 Quelques détails pratiques facilitent la mise en route : boutons TEST et SERVICE directement sur la carte, DEL d'alimentation,
 points de test pour chaque alimentation, et un cavalier (JP1) pour choisir si la logique de la drive board est alimentée par le
@@ -42,7 +45,31 @@ points de test pour chaque alimentation, et un cavalier (JP1) pour choisir si la
 | PC / adaptateur HDMI-VGA | ON | ON |
 | RGB arcade | OFF | OFF |
 
-Le même tableau est imprimé sur la carte (en anglais).
+Le même tableau est imprimé sur la carte (en anglais). Avec l'entrée HDMI (V3), prendre la première ligne : U4 est le même genre de puce que celle d'un adaptateur
+HDMI → VGA (pas encore essayé sur une vraie carte).
+
+## Entrée HDMI (V3)
+
+Nouveau dans la V3. J15 reçoit directement la sortie HDMI de l'hôte ; U4 (CS5213) la convertit en R/V/B analogique avec synchros
+H/V et audio stéréo : plus besoin d'adaptateur HDMI → VGA externe. L'entrée VGA J13 reste, et un cavalier choisit entre les deux.
+
+| Cavalier | Position | Effet |
+|---|---|---|
+| JP9 (VIDEO INPUT SOURCE) | posé (ON) | vidéo de l'entrée HDMI (J15, par U4) |
+| JP9 | retiré (OFF) | vidéo de l'entrée VGA (J13), comme en V2 |
+| JP10 (HDMI CHIP 5V SELECT) | 1-2 | U4 alimenté par le 5 V du Mega |
+| JP10 | 2-3 | U4 alimenté par le 5 V de la borne, à travers une ferrite (FB1) |
+
+- La commutation est faite par U7 (TS5V330, R/V/B) et U8 (74HCT157, synchros H/V) ; tout ce qui suit (ampli, synchro
+  composite, VIDEO OUT) est identique à la V2.
+- **Audio :** J16, double prise RCA superposée : **rouge (en haut) = droite**, **blanche (en bas) = gauche**, liaison par
+  condensateur (10 µF en série).
+- **Branchement à chaud :** le HPD est tiré au 5 V du câble HDMI : l'hôte voit un écran dès que le câble est branché.
+- **EDID (facultatif) :** U6, une EEPROM AT24C02 sur les lignes DDC du HDMI (adresse 0x50), **n'est pas posée** par défaut ; les
+  broches DDC de U4 ne sont pas reliées. Sans U6, l'hôte ne reçoit aucun EDID de la carte et doit connaître le mode vidéo par un
+  autre moyen. Poser U6 (et C24) et y écrire un EDID de 256 octets si l'hôte en a besoin, par exemple pour activer le son HDMI.
+  Sa protection en écriture est à la masse : on peut la programmer en place, par le câble HDMI.
+- **U5** est une deuxième empreinte, non posée, pour un convertisseur NX3303X. Poser U4 ou U5, jamais les deux.
 
 ## Cavalier d'écran (JP8)
 
@@ -52,7 +79,7 @@ demande que le cavalier, pas de changement de logiciel.
 
 | JP8 | Écran |
 |---|---|
-| posé (ON) | CRT (4:3) : le moniteur arcade d'origine, par un adaptateur HDMI → VGA |
+| posé (ON) | CRT (4:3) : le moniteur arcade d'origine, par l'entrée HDMI (V3) ou un adaptateur HDMI → VGA |
 | retiré (OFF) | écran LVDS (16:9) |
 
 Imprimé sur la carte (en anglais) : SCREEN / ON = CRT (4:3) / OFF = LVDS 16:9. Ce que l'hôte fait de cette entrée dépend de son
@@ -73,7 +100,7 @@ Rendus KiCad 10 tirés des fichiers de ce dépôt.
 | | |
 |---|---|
 | ![Vue en perspective](docs/board-3d-back.png) | ![Gros plan de la section vidéo](docs/board-video.png) |
-| Vue en perspective | Section vidéo : entrée VGA, ampli OPA3355, cavaliers et tableau de réglage |
+| Vue en perspective | Section vidéo : entrées VGA et HDMI, choix de source, ampli OPA3355, cavaliers et tableaux de réglage |
 | ![Vue de dessus](docs/board-top.png) | ![Vue de dessous](docs/board-bottom.png) |
 | Dessus | Dessous |
 
@@ -92,13 +119,19 @@ Carte : 2 couches, 180 × 190 mm. Les Gerbers sortent des réglages de tracé en
 
 ## Points ouverts
 
-**CN1 et CN2** sont des embases 3M simples à quatre murs, sans leviers d'éjection.
+- **La V3 n'a pas été fabriquée.** U4 (CS5213) n'a pas été essayé avec le mode 24 kHz du moniteur arcade (sa fiche technique
+  donne une horloge TMDS de 25 à 200 MHz) ; les paires HDMI passent sur une carte 2 couches sans impédance contrôlée. La V1 est la
+  seule carte commandée.
+- **U4 se soude à la main** et vient d'une source du marché gris (voir la [BOM](bom/BOM.fr.md#u4-cs5213)). Sa pastille centrale
+  a des vias : commander des vias bouchés (via-in-pad) ou réduire la pâte.
+- **U5 (NX3303X) :** son brochage vient du schéma de brochage publié par le fabricant ; il n'a pas été vérifié sur une vraie puce.
+- **CN1 et CN2** sont des embases 3M simples à quatre murs, sans leviers d'éjection.
 
 ## Modèles 3D
 
 Le modèle de l'Arduino Mega dans `kicad/3d/` est dérivé des fichiers CAO d'Arduino (CC BY-SA 4.0) et de modèles de la
-bibliothèque KiCad ; voir [`kicad/3d/README.fr.md`](kicad/3d/README.fr.md). Les connecteurs JST NH utilisent des modèles
-simplifiés faits pour ce projet (embase et broches).
+bibliothèque KiCad ; voir [`kicad/3d/README.fr.md`](kicad/3d/README.fr.md). Les connecteurs JST NH et la prise RCA (J16)
+utilisent des modèles simplifiés faits pour ce projet.
 
 ## Crédits
 

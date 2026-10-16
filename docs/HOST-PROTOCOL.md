@@ -97,9 +97,9 @@ Bits marked "active low" read 0 when the switch is pressed.
 
 - **Lamps bits 0-1 drive the original coin meters:** every pulse adds one coin to a mechanical counter. Don't use them for
   testing.
-- **JP8** (V2 board) ties the Mega's D36 to ground. IN1 bit 1 reads **0 when the jumper is fitted** and 1 when it's removed.
-  It's not a game input: it's there so the host can choose its screen at start-up (fitted = CRT 4:3 through an HDMI-to-VGA
-  adapter, removed = LVDS 16:9). How the host uses it is up to the host. Before you hand IN1 to the I/O board, set bit 1 to 1:
+- **JP8** (V2 and V3 boards) ties the Mega's D36 to ground. IN1 bit 1 reads **0 when the jumper is fitted** and 1 when it's removed.
+  It's not a game input: it's there so the host can choose its screen at start-up (fitted = CRT 4:3 through the board's HDMI input or an
+  HDMI-to-VGA adapter, removed = LVDS 16:9). How the host uses it is up to the host. Before you hand IN1 to the I/O board, set bit 1 to 1:
   bits 1-3 aren't used by Daytona (MAME marks them unused) and read 1 on the original board.
 - **The shifter is passed raw.** The cabinet's own contacts produce the gear code the game expects, so don't convert it.
   MAME's `daytona_gearbox_r` only exists to build that code from keys.

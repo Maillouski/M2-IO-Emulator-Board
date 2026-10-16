@@ -11,8 +11,9 @@ feedback) and the original arcade monitor.
 > **Status: prototype.** The design passes DRC and ERC, but no board has been built or tested yet. Read
 > [Open points](#open-points) before you order.
 
-**Version: V2** (2026-10-13), which adds the screen jumper [JP8](#screen-jumper-jp8). V1, the first board, ordered from JLCPCB on
-2026-10-13, is kept under the tag [`v1`](https://github.com/Maillouski/M2-IO-Emulator-Board/tree/v1).
+**Version: V3** (2026-10-16), which adds an [HDMI input](#hdmi-input-v3) with its own HDMI → VGA converter and a stereo audio
+output. V2 (screen jumper JP8) is kept under the tag [`v2`](https://github.com/Maillouski/M2-IO-Emulator-Board/tree/v2), and V1,
+the first board, ordered from JLCPCB on 2026-10-13, under the tag [`v1`](https://github.com/Maillouski/M2-IO-Emulator-Board/tree/v1).
 
 ## What it does
 
@@ -26,8 +27,9 @@ everything the original board used to drive:
 - **Lamps, meters and relay** — switched by a ULN2803A, so the original bulbs and coin meters keep working.
 - **Force feedback** — the original drive board stays in the cabinet and gets its commands from the Mega, so the wheel keeps
   its original force feedback.
-- **Video** — a VGA input goes to the original arcade monitor, with composite sync built on the board. A small switchable video
-  amplifier lifts a PC or HDMI-to-VGA signal to the level the tube expects.
+- **Video** — an HDMI input (V3) or a VGA input goes to the original arcade monitor, with composite sync built on the board. A
+  small switchable video amplifier lifts the signal to the level the tube expects.
+- **Sound** — the audio carried by the HDMI input comes out on two RCA jacks (V3).
 
 A few practical details make bring-up easier: TEST and SERVICE buttons right on the board, a power LED, test points for each
 supply, and a jumper (JP1) to choose whether the drive board logic runs from the Mega's 5 V or from the cabinet's.
@@ -39,7 +41,30 @@ supply, and a jumper (JP1) to choose whether the drive board logic runs from the
 | PC / HDMI-VGA adapter | ON | ON |
 | Arcade RGB | OFF | OFF |
 
-The same table is printed on the board.
+The same table is printed on the board. With the HDMI input (V3), use the first row: U4 is the same kind of chip as the one inside an HDMI-to-VGA
+adapter (not yet tried on a real board).
+
+## HDMI input (V3)
+
+New in V3. J15 takes the host's HDMI output directly; U4 (CS5213) turns it into analog R/G/B with H/V sync and stereo audio, so
+no external HDMI → VGA adapter is needed. The VGA input J13 is still there, and a jumper chooses between the two.
+
+| Jumper | Setting | Effect |
+|---|---|---|
+| JP9 (VIDEO INPUT SOURCE) | ON | video from the HDMI input (J15, through U4) |
+| JP9 | OFF | video from the VGA input (J13), as on V2 |
+| JP10 (HDMI CHIP 5V SELECT) | 1-2 | U4 runs from the Mega's 5 V |
+| JP10 | 2-3 | U4 runs from the cabinet's 5 V, through a ferrite filter (FB1) |
+
+- The switch is made by U7 (TS5V330, R/G/B) and U8 (74HCT157, H/V sync); everything after it (amplifier, composite sync, VIDEO
+  OUT) is the same as on V2.
+- **Audio:** J16, a stacked RCA jack: **red (top) = right**, **white (bottom) = left**, AC-coupled (10 µF in series).
+- **Hot plug:** HPD is pulled up to the HDMI cable's 5 V, so the host sees a display as soon as the cable is in.
+- **EDID (optional):** U6, an AT24C02 EEPROM on the HDMI DDC lines (address 0x50), is **not fitted** by default; U4's own DDC pins
+  are not connected. Without U6 the host gets no EDID from the board and must be told the video mode another way. Fit U6 (and
+  C24) and program a 256-byte EDID into it if your host needs one, for example to enable HDMI audio. Its write protect is tied
+  low, so it can be programmed in place through the HDMI cable.
+- **U5** is a second, not fitted, footprint for an NX3303X converter. Fit U4 or U5, never both.
 
 ## Screen jumper (JP8)
 
@@ -49,7 +74,7 @@ jumper, not a software change.
 
 | JP8 | Screen |
 |---|---|
-| ON | CRT (4:3): the original arcade monitor, through an HDMI-to-VGA adapter |
+| ON | CRT (4:3): the original arcade monitor, through the HDMI input (V3) or an HDMI-to-VGA adapter |
 | OFF | LVDS panel (16:9) |
 
 Printed on the board as SCREEN / ON = CRT (4:3) / OFF = LVDS 16:9. What the host does with this input is up to the host
@@ -69,7 +94,7 @@ Rendered with KiCad 10 from the files in this repository.
 | | |
 |---|---|
 | ![Perspective view](docs/board-3d-back.png) | ![Video section close-up](docs/board-video.png) |
-| Perspective view | Video section: VGA in, OPA3355 amplifier, jumpers and settings table |
+| Perspective view | Video section: VGA and HDMI inputs, source switch, OPA3355 amplifier, jumpers and settings tables |
 | ![Top view](docs/board-top.png) | ![Bottom view](docs/board-bottom.png) |
 | Top | Bottom |
 
@@ -88,12 +113,18 @@ Board: 2 layers, 180 × 190 mm. Gerbers come from the PCB's own plot settings (K
 
 ## Open points
 
-**CN1 and CN2** are plain 3M four-wall headers, without ejector latches.
+- **V3 has not been built.** U4 (CS5213) has not been tried with the 24 kHz mode of the arcade monitor (its datasheet gives a
+  25-200 MHz TMDS clock range); the HDMI pairs run on a 2-layer board without controlled impedance. V1 is the only board that
+  has been ordered.
+- **U4 is soldered by hand** and comes from a grey-market source (see the [BOM](bom/BOM.md#u4-cs5213)). Its exposed pad has vias:
+  order plugged vias (via-in-pad) or reduce the paste.
+- **U5 (NX3303X):** its pinout comes from the maker's published pin diagram; it has not been checked on a real chip.
+- **CN1 and CN2** are plain 3M four-wall headers, without ejector latches.
 
 ## 3D models
 
 The Arduino Mega model in `kicad/3d/` is derived from Arduino's CAD files (CC BY-SA 4.0) and KiCad library models; see
-[`kicad/3d/README.md`](kicad/3d/README.md). The JST NH connectors use simplified models made for this project (plastic base and pins).
+[`kicad/3d/README.md`](kicad/3d/README.md). The JST NH connectors and the RCA jack (J16) use simplified models made for this project.
 
 ## Credits
 

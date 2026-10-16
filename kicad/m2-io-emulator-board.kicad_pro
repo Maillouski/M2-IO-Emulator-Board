@@ -615,6 +615,15 @@
         "wire_width": 6
       },
       {
+        "clearance": 0.2,
+        "name": "Puce_HDMI",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 1,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.2,
+        "tuning_profile": ""
+      },
+      {
         "name": "Signal_Video",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "priority": 0,
@@ -696,6 +705,42 @@
       {
         "netclass": "Signal_Video",
         "pattern": "/VGA_VS"
+      },
+      {
+        "netclass": "Signal_Video",
+        "pattern": "/J13_*"
+      },
+      {
+        "netclass": "Puce_HDMI",
+        "pattern": "/HD_*"
+      },
+      {
+        "netclass": "Puce_HDMI",
+        "pattern": "/HDMI_*"
+      },
+      {
+        "netclass": "Puce_HDMI",
+        "pattern": "/CS_*"
+      },
+      {
+        "netclass": "Puce_HDMI",
+        "pattern": "/NX_*"
+      },
+      {
+        "netclass": "Puce_HDMI",
+        "pattern": "/AUD_OUT_*"
+      },
+      {
+        "netclass": "Puce_HDMI",
+        "pattern": "/SRC_SEL"
+      },
+      {
+        "netclass": "Puce_HDMI",
+        "pattern": "/+5V_CONV"
+      },
+      {
+        "netclass": "Puce_HDMI",
+        "pattern": "/+5V_BORNE_F"
       }
     ]
   },

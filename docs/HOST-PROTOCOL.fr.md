@@ -99,9 +99,9 @@ Un bit « actif à 0 » vaut 0 quand le contact est appuyé.
 
 - **Les bits 0-1 des lampes commandent les compteurs de pièces d'origine :** chaque impulsion ajoute une pièce à un compteur
   mécanique. Ne pas s'en servir pour des essais.
-- **JP8** (carte V2) relie D36 du Mega à la masse. Le bit 1 de IN1 vaut **0 quand le cavalier est posé** et 1 quand il est
-  retiré. Ce n'est pas une entrée du jeu : il sert à l'hôte pour choisir son écran au démarrage (posé = tube 4:3 par un
-  adaptateur HDMI → VGA, retiré = dalle LVDS 16:9). L'usage qu'en fait l'hôte lui appartient. Avant de transmettre IN1 à la
+- **JP8** (cartes V2 et V3) relie D36 du Mega à la masse. Le bit 1 de IN1 vaut **0 quand le cavalier est posé** et 1 quand il est
+  retiré. Ce n'est pas une entrée du jeu : il sert à l'hôte pour choisir son écran au démarrage (posé = tube 4:3 par l'entrée HDMI
+  de la carte ou un adaptateur HDMI → VGA, retiré = dalle LVDS 16:9). L'usage qu'en fait l'hôte lui appartient. Avant de transmettre IN1 à la
   carte E/S, forcer le bit 1 à 1 : Daytona n'utilise pas les bits 1-3 (MAME les marque inutilisés), qui valent 1 sur la carte
   d'origine.
 - **Le levier passe tel quel.** Les contacts de la borne produisent eux-mêmes le code de vitesse attendu par le jeu : ne pas

@@ -2,8 +2,8 @@
 
 [English](BOM.md) | **Français**
 
-Quantités **par carte**. 163 repères, vérifiés un par un contre le schéma (V3, 2026-10-16) : 159 dans le fichier DigiKey, U4
-d'une autre source, et 3 non posés (DNP).
+Quantités **par carte**. 167 repères, vérifiés un par un contre le schéma (V3, 2026-10-16) : 165 dans le fichier DigiKey, U4
+d'une autre source, et 1 non posé (DNP).
 
 **Import DigiKey :** [`BOM-digikey.csv`](BOM-digikey.csv) (Quantity, Digi-Key Part Number, Manufacturer Part Number,
 Manufacturer, Customer Reference). Le charger dans le gestionnaire de BOM de DigiKey ou dans une myList, puis multiplier par le
@@ -19,9 +19,10 @@ quantité 1, sans taxes ni livraison. Prix et stocks changent : revérifier avan
 
 | Qté | Repères | Valeur | Pièce du fabricant | DigiKey | Remarque |
 |---:|---|---|---|---|---|
-| 31 | C1-C16, C18, C20-C22, C27-C29, C31, C33, C35, C36, C38, C43, C44, C46 | 100 nF 50 V X7R 0805 | YAGEO CC0805KRX7R9BB104 | 311-1140-1-ND | |
+| 32 | C1-C16, C18, C20-C22, C24, C27-C29, C31, C33, C35, C36, C38, C43, C44, C46 | 100 nF 50 V X7R 0805 | YAGEO CC0805KRX7R9BB104 | 311-1140-1-ND | |
 | 11 | C19, C23, C25, C26, C30, C32, C34, C37, C41, C42, C45 | 10 µF 16 V X7R 0805 | Samsung CL21B106KOQNNNG | 1276-6472-1-ND | ⚠️ peu de stock (51) ; tout 10 µF ≥ 16 V X5R/X7R 0805 convient |
 | 2 | C39, C40 | 10 nF 50 V X7R 0805 | YAGEO CC0805KRX7R9BB103 | 311-1136-1-ND | filtre audio (V3) |
+| 2 | C47, C48 | 22 µF 25 V X5R 0805 | Murata GRM21BR61E226ME44L | 490-10749-1-ND | moyenne des synchros (synchro composite) ; ⚠️ peu de stock (125) ; tout 22 µF ≥ 10 V X5R/X7R 0805 convient |
 | 1 | C17 | 100 µF 16 V, Ø 6,3 mm, pas 2,5 mm | Panasonic EEU-FC1C101 | P11198-ND | ⚠️ peu de stock (1) ; tout 100 µF ≥ 16 V Ø 6,3 / pas 2,5 convient |
 | 1 | D1 | DEL verte 3 mm | Kingbright WP710A10GD | 754-1603-ND | « CAB PWR LED » |
 | 1 | FB1 | ferrite 600 Ω, 0805 | Murata BLM21PG601SN1D | 490-BLM21PG601SN1DCT-ND | V3 ; le schéma indique Sunlord GZ2012D601TF (600 Ω à 100 MHz, la pièce JLCPCB), absente chez DigiKey |
@@ -47,11 +48,13 @@ quantité 1, sans taxes ni livraison. Prix et stocks changent : revérifier avan
 | 3 | R51-R53 | 604 Ω 1 % 0805 | YAGEO RC0805FR-07604RL | 311-604CRCT-ND | contre-réaction de l'ampli vidéo |
 | 3 | R54-R56 | 200 Ω 1 % 0805 | YAGEO RC0805FR-07200RL | 311-200CRCT-ND | gain de l'ampli vidéo (gain = 4,02) |
 | 3 | R57-R59 | 33 Ω 1 % 0805 | YAGEO RC0805FR-0733RL | 311-33.0CRCT-ND | sortie de l'ampli vidéo |
+| 2 | R66, R67 | 2,2 kΩ 1 % 0805 | YAGEO RC0805FR-072K2L | 311-2.20KCRCT-ND | moyenne des synchros (avec C47, C48) |
 | 2 | SW1, SW2 | bouton tactile 6 × 6 mm | TE 1825910-6 | 450-1650-ND | TEST, SERVICE |
 | 4 | TP1-TP4 | point de test | Keystone 5002 | 36-5002-ND | |
 | 1 | U1 | ULN2803A, DIP-18 | STMicroelectronics ULN2803A | 497-2356-5-ND | lampes, compteurs, relais ; soudé directement, sans support |
-| 1 | U2 | 74HCT86, SOIC-14 | Nexperia 74HCT86D,653 | 1727-6360-1-ND | synchro composite (H XOR V, puis inversée) |
+| 1 | U2 | 74HCT86, SOIC-14 | Nexperia 74HCT86D,653 | 1727-6360-1-ND | synchro composite, négative quelle que soit la polarité de H et V (voir le [README](../README.fr.md#synchro-composite)) |
 | 1 | U3 | OPA3355EA, TSSOP-14 | Texas Instruments OPA3355EA/2K5 | 296-29279-1-ND | triple ampli vidéo (R, V, B) |
+| 1 | U6 | AT24C02, SOIC-8 | Microchip AT24C02C-SSHM-T | AT24C02C-SSHM-TCT-ND | EEPROM d'EDID sur les lignes DDC du HDMI (adresse 0x50, protection en écriture à la masse), alimentée par le +5 V du HDMI ; arrive vierge |
 | 1 | U4 | CS5213, QFN-32 4 × 4 mm, pas 0,4 mm | Capstone CS5213AN | — | convertisseur HDMI → VGA (V3) ; ni chez DigiKey ni chez JLCPCB, voir [plus bas](#u4-cs5213) |
 | 1 | U7 | TS5V330, TSSOP-16 | Texas Instruments TS5V330CPWR | 296-27548-1-ND | choix de source R/V/B (V3) |
 | 1 | U8 | 74HCT157, SOIC-16 | Texas Instruments SN74HCT157DR | 296-31835-1-ND | choix de source des synchros H/V (V3) |
@@ -60,14 +63,12 @@ quantité 1, sans taxes ni livraison. Prix et stocks changent : revérifier avan
 
 ## Non posés (DNP)
 
-Ces empreintes sont sur la carte mais restent vides par défaut. Elles ne sont ni dans le fichier DigiKey ni dans les fichiers
+Cette empreinte est sur la carte mais reste vide. Elle n'est ni dans le fichier DigiKey ni dans les fichiers
 JLCPCB.
 
 | Repère | Pièce | Empreinte | Rôle |
 |---|---|---|---|
 | U5 | NX3303X (HDMI → VGA, QFN-32 5 × 5 mm) | QFN-32, pas 0,5 mm | empreinte de secours pour une deuxième puce de conversion ; **poser U4 ou U5, jamais les deux** (elles partagent les lignes HDMI) |
-| U6 | Microchip AT24C02C-SSHM-T (DigiKey AT24C02C-SSHM-TCT-ND) | SOIC-8 | EEPROM d'EDID sur les lignes DDC du HDMI (adresse 0x50, protection en écriture à la masse), alimentée par le +5 V du HDMI |
-| C24 | 100 nF 0805 | 0805 | découplage de U6, à poser avec U6 |
 
 ## Hors carte
 
@@ -89,7 +90,7 @@ cette pastille, sinon la brasure peut fuir par les trous.
 
 ## Coût
 
-Environ **75 $ CA par carte** en pièces DigiKey à la quantité 1 (2026-10-16), sans l'Arduino Mega (74,74 $ CA), sans J3-J5 et
+Environ **77 $ CA par carte** en pièces DigiKey à la quantité 1 (2026-10-16), sans l'Arduino Mega (74,74 $ CA), sans J3-J5 et
 sans U4. Commander pour plusieurs cartes fait beaucoup baisser le prix des passifs.
 
 ## Embases JST NH (J3, J4, J5)

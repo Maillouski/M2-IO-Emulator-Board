@@ -11,8 +11,8 @@ d'origine (retour de force) et moniteur arcade d'origine.
 > **État : prototype.** Le design passe la DRC et l'ERC, mais aucune carte n'a encore été fabriquée ni testée. Lire les
 > [points ouverts](#points-ouverts) avant de commander.
 
-**Version : V3** (2026-10-16), qui ajoute une [entrée HDMI](#entrée-hdmi-v3) avec son propre convertisseur HDMI → VGA et une
-sortie audio stéréo. La V2 (cavalier d'écran JP8) est gardée sous l'étiquette
+**Version : V3** (2026-10-16), qui ajoute une [entrée HDMI](#entrée-hdmi-v3) avec son propre convertisseur HDMI → VGA, une
+sortie audio stéréo et une [synchro composite](#synchro-composite) qui ne dépend plus de la polarité de H et V. La V2 (cavalier d'écran JP8) est gardée sous l'étiquette
 [`v2`](https://github.com/Maillouski/M2-IO-Emulator-Board/tree/v2), et la V1, première carte, commandée chez JLCPCB le
 2026-10-13, sous l'étiquette [`v1`](https://github.com/Maillouski/M2-IO-Emulator-Board/tree/v1).
 
@@ -31,7 +31,7 @@ d'origine pilotait :
 - **Retour de force** — la drive board d'origine reste dans la borne et reçoit ses ordres du Mega : le volant garde son retour de force
   d'origine.
 - **Vidéo** — une entrée HDMI (V3) ou une entrée VGA va au moniteur arcade d'origine, avec la synchro composite fabriquée sur la
-  carte. Un petit ampli vidéo, activable par cavaliers, remonte le signal au niveau qu'attend le tube.
+  carte (négative, quelle que soit la polarité de H et V). Un petit ampli vidéo, activable par cavaliers, remonte le signal au niveau qu'attend le tube.
 - **Son** — l'audio transporté par l'entrée HDMI sort sur deux prises RCA (V3).
 
 Quelques détails pratiques facilitent la mise en route : boutons TEST et SERVICE directement sur la carte, DEL d'alimentation,
@@ -47,6 +47,15 @@ points de test pour chaque alimentation, et un cavalier (JP1) pour choisir si la
 
 Le même tableau est imprimé sur la carte (en anglais). Avec l'entrée HDMI (V3), prendre la première ligne : U4 est le même genre de puce que celle d'un adaptateur
 HDMI → VGA (pas encore essayé sur une vraie carte).
+
+## Synchro composite
+
+U2 (74HCT86) fabrique la synchro composite du moniteur à partir de H et V, d'après le circuit de
+[Tomi Engdahl](https://www.epanorama.net/circuits/vga2rgbs.html). Chaque synchro est comparée (XOR) à sa propre moyenne, prise
+par un filtre RC (R66 + C47 pour H, R67 + C48 pour V : 2,2 kΩ, 22 µF) : ses impulsions sortent donc toujours positives ; les
+deux sont ensuite combinées puis inversées. Le résultat est une synchro composite **négative** quelle que soit la polarité de H
+et V à l'entrée, ce qu'attend le moniteur d'origine. Après un changement de polarité (nouveau mode vidéo), les filtres se
+stabilisent en une fraction de seconde. Elle part vers VIDEO OUT par R47 (470 Ω).
 
 ## Entrée HDMI (V3)
 
@@ -65,10 +74,10 @@ H/V et audio stéréo : plus besoin d'adaptateur HDMI → VGA externe. L'entrée
 - **Audio :** J16, double prise RCA superposée : **rouge (en haut) = droite**, **blanche (en bas) = gauche**, liaison par
   condensateur (10 µF en série).
 - **Branchement à chaud :** le HPD est tiré au 5 V du câble HDMI : l'hôte voit un écran dès que le câble est branché.
-- **EDID (facultatif) :** U6, une EEPROM AT24C02 sur les lignes DDC du HDMI (adresse 0x50), **n'est pas posée** par défaut ; les
-  broches DDC de U4 ne sont pas reliées. Sans U6, l'hôte ne reçoit aucun EDID de la carte et doit connaître le mode vidéo par un
-  autre moyen. Poser U6 (et C24) et y écrire un EDID de 256 octets si l'hôte en a besoin, par exemple pour activer le son HDMI.
-  Sa protection en écriture est à la masse : on peut la programmer en place, par le câble HDMI.
+- **EDID :** U6, une EEPROM AT24C02 sur les lignes DDC du HDMI (adresse 0x50, découplée par C24), est posée et arrive **vierge** ;
+  les broches DDC de U4 ne sont pas reliées. L'hôte doit y écrire un EDID de 256 octets (le mode vidéo du moniteur, et le son
+  HDMI au besoin) : tant qu'elle est vierge, l'hôte lit un EDID invalide. Sa protection en écriture est à la masse : on la
+  programme en place, par le câble HDMI.
 - **U5** est une deuxième empreinte, non posée, pour un convertisseur NX3303X. Poser U4 ou U5, jamais les deux.
 
 ## Cavalier d'écran (JP8)
@@ -137,7 +146,7 @@ utilisent des modèles simplifiés faits pour ce projet.
 
 Sources utilisées pour cette carte : manuels SEGA de Daytona USA ; MAME (Dirk Best pour la carte E/S Model 1 ; R. Belmont,
 O. Galibert, ElSemi, A. Salese, M. Daniels pour le Model 2) ; M2Pac de BigPanik (Gamoover) ; DaytonaUSB de SailorSat ;
-BackForceFeeder de njz3 ; adaptateurs MEGA de Tibal ; le projet MiSTer (vidéo vers moniteur arcade).
+BackForceFeeder de njz3 ; adaptateurs MEGA de Tibal ; le projet MiSTer (vidéo vers moniteur arcade) ; Tomi Engdahl (circuit de synchro composite).
 
 Projet non affilié à SEGA ni approuvé par SEGA.
 

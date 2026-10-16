@@ -9498,10 +9498,7 @@
 		(at 88.9 180.34)
 		(uuid "3444fd8f-2a09-4d31-8154-85a60fd6efb2")
 	)
-	(no_connect
-		(at 114.3 533.4)
-		(uuid "35008777-3418-4d85-a989-9eca1d833b36")
-	)
+	
 	(no_connect
 		(at 167.64 680.72)
 		(uuid "361e9e4a-73a9-4ffe-94e2-d207c8bee990")
@@ -9698,10 +9695,7 @@
 		(at 88.9 81.28)
 		(uuid "97a9154c-c772-4069-8ec3-f5cda2aaac43")
 	)
-	(no_connect
-		(at 114.3 525.78)
-		(uuid "9aad5393-49fe-4988-b41b-e27ae355ca7f")
-	)
+	
 	(no_connect
 		(at 88.9 187.96)
 		(uuid "9b1ef5e8-0b6c-4ed2-86bf-6e2462cd1e12")
@@ -11508,7 +11502,7 @@
 		)
 		(uuid "51df82ab-b40c-44fe-ad33-66d7ac5f7ca8")
 	)
-	(label "VGA_VS"
+	(label "HS_AVG"
 		(at 114.3 510.54 180)
 		(effects
 			(font
@@ -11658,7 +11652,7 @@
 		)
 		(uuid "57d65c64-0460-45ae-9ff4-d1de285226ca")
 	)
-	(label "CSYNC_XOR"
+	(label "VS_AVG"
 		(at 114.3 515.62 180)
 		(effects
 			(font
@@ -12138,7 +12132,7 @@
 		)
 		(uuid "6d9aa2fe-703a-4130-be01-e80dc53f2c1d")
 	)
-	(label "GND"
+	(label "VS_NORM"
 		(at 114.3 535.94 180)
 		(effects
 			(font
@@ -12318,7 +12312,7 @@
 		)
 		(uuid "7391bf84-0df9-4b83-ad34-4a0be04d79c7")
 	)
-	(label "GND"
+	(label "HS_NORM"
 		(at 114.3 538.48 180)
 		(effects
 			(font
@@ -12328,7 +12322,7 @@
 		)
 		(uuid "7422cd08-6544-46f7-a1ed-1fab5dd471b4")
 	)
-	(label "CSYNC_XOR"
+	(label "HS_NORM"
 		(at 114.3 513.08 180)
 		(effects
 			(font
@@ -12648,7 +12642,7 @@
 		)
 		(uuid "87a1e1ef-536d-4d8f-891f-94fd01167cfe")
 	)
-	(label "+5V_MEGA"
+	(label "VGA_VS"
 		(at 114.3 518.16 180)
 		(effects
 			(font
@@ -12808,7 +12802,7 @@
 		)
 		(uuid "8d5d8257-c070-4b46-bafe-602d7099abb1")
 	)
-	(label "GND"
+	(label "CSYNC_XOR"
 		(at 114.3 528.32 180)
 		(effects
 			(font
@@ -14198,7 +14192,7 @@
 		)
 		(uuid "cd804e1d-75c7-41f9-809c-185c6f81d491")
 	)
-	(label "CSYNC_N"
+	(label "VS_NORM"
 		(at 114.3 520.7 180)
 		(effects
 			(font
@@ -15218,7 +15212,7 @@
 		)
 		(uuid "f74d1b1e-e87e-4fd5-9484-a40f1b5257b0")
 	)
-	(label "GND"
+	(label "+5V_MEGA"
 		(at 114.3 530.86 180)
 		(effects
 			(font
@@ -16739,7 +16733,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp yes)
+		(dnp no)
 		(uuid "186da401-d12e-416d-bbb9-bfe832cdcae9")
 		(property "Reference" "C24"
 			(at 741.68 621.03 0)
@@ -18724,7 +18718,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
-		(dnp yes)
+		(dnp no)
 		(uuid "38107c4d-3ffa-4ecd-8162-1071858410ff")
 		(property "Reference" "U6"
 			(at 886.46 429.26 0)
@@ -31215,6 +31209,49 @@
 			)
 		)
 	)
+	(label "CSYNC_N" (at 114.3 525.78 180) (effects (font (size 1.27 1.27)) (justify right bottom)) (uuid "7c8e5606-2deb-46e7-a28c-b5b2d82b7147"))
+	(label "CSYNC_XOR" (at 114.3 533.4 180) (effects (font (size 1.27 1.27)) (justify right bottom)) (uuid "768c4647-e2a7-454c-a84d-00c504cfeae8"))
+	(text "V3 (2026-10-16) : synchro indépendante de la polarité (T. Engdahl).\nU2 portes 1-2 : chaque synchro XOR sa moyenne (2,2 kΩ / 22 µF)\n→ HS_NORM, VS_NORM en impulsions positives → porte 4 → porte 3 (inversion) :\nCSYNC négative quelles que soient les polarités H/V." (exclude_from_sim no) (at 72.39 560.07 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "f68a607b-e87c-45a3-bc1e-0369527e4467"))
+(symbol (lib_id "Device:R") (at 73.66 508.00 0) (unit 1) (body_style 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "71ea77ab-afa4-4fd2-aa8d-e3cecaf8552d")
+(property "Reference" "R66" (at 76.20 506.73 0) (effects (font (size 1.27 1.27)) (justify left)))
+(property "Value" "2,2 kΩ" (at 76.20 509.27 0) (effects (font (size 1.27 1.27)) (justify left)))
+(property "Footprint" "Resistor_SMD:R_0805_2012Metric" (at 73.66 508.00 0) (effects (font (size 1.27 1.27))) (hide yes))
+(property "Datasheet" "" (at 73.66 508.00 0) (effects (font (size 1.27 1.27))) (hide yes))
+(property "MPN" "RC0805FR-072K2L" (at 73.66 508.00 0) (effects (font (size 1.27 1.27))) (hide yes))
+(pin "1" (uuid "8dbd352e-6c43-41ac-88d4-5cb472ef6ecc"))(pin "2" (uuid "02b6a685-603c-46bc-80f7-4a3f2af7e406"))
+(instances (project "m2-io-emulator-board" (path "/d44661bf-d01e-4075-8845-9c2310b0d4a5" (reference "R66") (unit 1)))))
+(label "VGA_HS" (at 73.66 504.19 90) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "0f894683-b47e-43bb-9a85-829b41ca3060"))
+(label "HS_AVG" (at 73.66 511.81 270) (effects (font (size 1.27 1.27)) (justify right bottom)) (uuid "259de44a-a8c0-466e-9e08-fefdc379afb1"))
+(symbol (lib_id "Device:C") (at 91.44 508.00 0) (unit 1) (body_style 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "12ee1a6c-0e8e-4dcb-bf8e-10bbeaa1deac")
+(property "Reference" "C47" (at 93.98 506.73 0) (effects (font (size 1.27 1.27)) (justify left)))
+(property "Value" "22 µF" (at 93.98 509.27 0) (effects (font (size 1.27 1.27)) (justify left)))
+(property "Footprint" "Capacitor_SMD:C_0805_2012Metric" (at 91.44 508.00 0) (effects (font (size 1.27 1.27))) (hide yes))
+(property "Datasheet" "" (at 91.44 508.00 0) (effects (font (size 1.27 1.27))) (hide yes))
+(property "MPN" "GRM21BR61E226ME44L" (at 91.44 508.00 0) (effects (font (size 1.27 1.27))) (hide yes))
+(pin "1" (uuid "29eeb92c-820d-4a59-8d4e-6098ad77a18e"))(pin "2" (uuid "32761b9a-d4c9-4063-b082-8fcd8e73e87d"))
+(instances (project "m2-io-emulator-board" (path "/d44661bf-d01e-4075-8845-9c2310b0d4a5" (reference "C47") (unit 1)))))
+(label "HS_AVG" (at 91.44 504.19 90) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "89405372-3e60-41fa-9087-d85e9c67a892"))
+(label "GND" (at 91.44 511.81 270) (effects (font (size 1.27 1.27)) (justify right bottom)) (uuid "35b5e620-612b-4867-b4b7-6ed400673163"))
+(symbol (lib_id "Device:R") (at 73.66 535.94 0) (unit 1) (body_style 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "541d1848-a5fb-48d5-b3ed-4ebd278ef423")
+(property "Reference" "R67" (at 76.20 534.67 0) (effects (font (size 1.27 1.27)) (justify left)))
+(property "Value" "2,2 kΩ" (at 76.20 537.21 0) (effects (font (size 1.27 1.27)) (justify left)))
+(property "Footprint" "Resistor_SMD:R_0805_2012Metric" (at 73.66 535.94 0) (effects (font (size 1.27 1.27))) (hide yes))
+(property "Datasheet" "" (at 73.66 535.94 0) (effects (font (size 1.27 1.27))) (hide yes))
+(property "MPN" "RC0805FR-072K2L" (at 73.66 535.94 0) (effects (font (size 1.27 1.27))) (hide yes))
+(pin "1" (uuid "60f80f4b-a0cc-45b2-a985-b19aa3ac0d2b"))(pin "2" (uuid "037dac45-a91a-45ad-869d-3d7f89c61697"))
+(instances (project "m2-io-emulator-board" (path "/d44661bf-d01e-4075-8845-9c2310b0d4a5" (reference "R67") (unit 1)))))
+(label "VGA_VS" (at 73.66 532.13 90) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "39ebe907-e380-4222-b8ea-1c2aff521c19"))
+(label "VS_AVG" (at 73.66 539.75 270) (effects (font (size 1.27 1.27)) (justify right bottom)) (uuid "454a929e-8162-4b7b-ac05-c08283d6234d"))
+(symbol (lib_id "Device:C") (at 91.44 535.94 0) (unit 1) (body_style 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no) (uuid "89ced24c-d1b5-4838-883e-5013c13bafea")
+(property "Reference" "C48" (at 93.98 534.67 0) (effects (font (size 1.27 1.27)) (justify left)))
+(property "Value" "22 µF" (at 93.98 537.21 0) (effects (font (size 1.27 1.27)) (justify left)))
+(property "Footprint" "Capacitor_SMD:C_0805_2012Metric" (at 91.44 535.94 0) (effects (font (size 1.27 1.27))) (hide yes))
+(property "Datasheet" "" (at 91.44 535.94 0) (effects (font (size 1.27 1.27))) (hide yes))
+(property "MPN" "GRM21BR61E226ME44L" (at 91.44 535.94 0) (effects (font (size 1.27 1.27))) (hide yes))
+(pin "1" (uuid "a434dc06-a236-4d53-ae81-70bd7e2225a5"))(pin "2" (uuid "f1ec9197-2b75-4666-9611-e6791b30ad95"))
+(instances (project "m2-io-emulator-board" (path "/d44661bf-d01e-4075-8845-9c2310b0d4a5" (reference "C48") (unit 1)))))
+(label "VS_AVG" (at 91.44 532.13 90) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "ae349a90-303a-4c60-aede-d8f7524b1946"))
+(label "GND" (at 91.44 539.75 270) (effects (font (size 1.27 1.27)) (justify right bottom)) (uuid "c8682815-36ab-41bf-aff8-ec09dda3b882"))
 	(sheet_instances
 		(path "/"
 			(page "1")

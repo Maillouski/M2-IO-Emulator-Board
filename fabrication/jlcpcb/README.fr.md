@@ -2,7 +2,7 @@
 
 [English](README.md) | **Français**
 
-JLCPCB fabrique la carte et soude 115 composants CMS. Vous soudez vous-même U4 (le CS5213, que JLCPCB n'a pas en stock) et les
+JLCPCB fabrique la carte et soude 121 composants CMS. Vous soudez vous-même U4 (le CS5213, que JLCPCB n'a pas en stock) et les
 pièces traversantes.
 
 | Fichier | Où le charger |
@@ -25,7 +25,7 @@ pièces traversantes.
   optiques. La pastille CMS la plus proche du bord est à 7,85 mm (J15, la prise HDMI, posée au bord) ; toutes les autres sont à
   10 mm ou plus. JLCPCB pourrait quand même demander des bords de manutention à cause de J15.
 - **Avant de payer,** vérifiez l'aperçu de placement :
-  - **SOIC et TSSOP (U2, U3, U7, U8) :** le point de la broche 1 de chaque pièce doit tomber sur la broche 1 de son empreinte.
+  - **SOIC et TSSOP (U2, U3, U6, U7, U8) :** le point de la broche 1 de chaque pièce doit tomber sur la broche 1 de son empreinte.
     Le CPL les tourne de −90° par rapport à KiCad, pour suivre les empreintes EasyEDA dont JLCPCB se sert pour placer.
   - **J15 (HDMI) :** le CPL déplace son centre de 2,05 mm vers ses broches (loin du bord de la carte), car l'empreinte EasyEDA de C427307 a son
     origine à cet endroit ; pastilles et orientation sont par ailleurs celles de KiCad. L'ouverture de la prise doit faire face
@@ -38,9 +38,10 @@ Numéros, types, stocks et prix vérifiés en direct sur jlcpcb.com le 2026-10-1
 
 | LCSC | Pièce | Repères | Qté / carte | Type | Stock | Prix |
 |---|---|---|---:|---|---:|---:|
-| C49678 | YAGEO CC0805KRX7R9BB104, 100 nF 50 V X7R | C1-C16, C18, C20-C22, C27-C29, C31, C33, C35, C36, C38, C43, C44, C46 | 31 | Basic | 21 M | 0,020 |
+| C49678 | YAGEO CC0805KRX7R9BB104, 100 nF 50 V X7R | C1-C16, C18, C20-C22, C24, C27-C29, C31, C33, C35, C36, C38, C43, C44, C46 | 32 | Basic | 21 M | 0,020 |
 | C15850 | Samsung CL21A106KAYNNNE, 10 µF 25 V X5R | C19, C23, C25, C26, C30, C32, C34, C37, C41, C42, C45 | 11 | Basic | 6,6 M | 0,044 |
 | C1710 | Samsung CL21B103KBANNNC, 10 nF 50 V X7R | C39, C40 | 2 | Basic | 1,6 M | 0,012 |
+| C45783 | Samsung CL21A226MAQNNNE, 22 µF 25 V X5R | C47, C48 | 2 | Basic | 3,8 M | 0,193 |
 | C1017 | Sunlord GZ2012D601TF, 600 Ω à 100 MHz | FB1 | 1 | Basic | 679 k | 0,020 |
 | C427307 | Amphenol 10029449-111RLF, HDMI type A | J15 | 1 | Extended | 1 514 | 0,62 |
 | C17673 | UNI-ROYAL 0805W8F4701T5E, 4,7 kΩ 1 % | R1-R13 | 13 | Basic | 4,2 M | 0,005 |
@@ -51,23 +52,24 @@ Numéros, types, stocks et prix vérifiés en direct sur jlcpcb.com le 2026-10-1
 | C228933 | YAGEO AC0805FR-07604RL, 604 Ω 1 % | R51-R53 | 3 | Extended | 4 446 | 0,007 |
 | C17540 | UNI-ROYAL 0805W8F2000T5E, 200 Ω 1 % | R54-R56 | 3 | Basic | 1,2 M | 0,007 |
 | C17634 | UNI-ROYAL 0805W8F330JT5E, 33 Ω 1 % | R57-R59 | 3 | Basic | 1,4 M | 0,005 |
+| C17520 | UNI-ROYAL 0805W8F2201T5E, 2,2 kΩ 1 % | R66, R67 | 2 | Basic | 3,7 M | 0,005 |
 | C6005 | Nexperia 74HCT86D,653, SOIC-14 | U2 | 1 | Extended | 911 | 0,36 |
 | C2652730 | Texas Instruments OPA3355EA/2K5, TSSOP-14 | U3 | 1 | Extended | **11** | 6,02 |
+| C6203 | Microchip AT24C02C-SSHM-T, SOIC-8 | U6 | 1 | Extended | 113 k | 0,21 |
 | C2652470 | Texas Instruments TS5V330CPWR, TSSOP-16 | U7 | 1 | Extended | 6 599 | 0,42 |
 | C6771 | Texas Instruments SN74HCT157DR, SOIC-16 | U8 | 1 | Extended | 155 | 0,41 |
 
 - **Stock de U3 très faible :** il n'y en avait que 11. S'il s'épuise, achetez-le d'avance dans votre bibliothèque de pièces
   JLCPCB, ou attendez un réassort. U3 n'a pas de remplaçant direct.
-- **Pièces Extended :** il y en a 7, et JLCPCB facture des frais de mise en place pour chaque pièce Extended. Les pièces Basic
+- **Pièces Extended :** il y en a 8, et JLCPCB facture des frais de mise en place pour chaque pièce Extended. Les pièces Basic
   n'en ont pas.
 - **Condensateurs de 10 µF :** la BOM JLCPCB utilise un X5R 25 V, une pièce Basic, au lieu du X7R 16 V de la BOM DigiKey ; le
   X5R est garanti jusqu'à 85 °C. Pour garder du X7R, prenez plutôt C95841 (Samsung CL21B106KOQNNNE, Extended, 268 k en stock).
 - **U2 :** si C6005 s'épuise, C527451 le remplace directement (TI CD74HCT86M96, même boîtier SOIC-14, Extended, 10 826 en
   stock).
-- **Non posés par JLCPCB :** U4 (CS5213, voir [`../../bom/BOM.fr.md`](../../bom/BOM.fr.md#u4-cs5213)) et les pièces DNP U5, U6
-  et C24.
+- **Non posés par JLCPCB :** U4 (CS5213, voir [`../../bom/BOM.fr.md`](../../bom/BOM.fr.md#u4-cs5213)) et la pièce DNP U5.
 - **Valeurs :** toutes les autres valeurs et tous les boîtiers correspondent à [`../../bom/BOM.fr.md`](../../bom/BOM.fr.md)
-  (FB1 : la BOM DigiKey prend un équivalent Murata). Vérifié repère par repère : 115 CMS, et la BOM, le CPL et le fichier de
+  (FB1 : la BOM DigiKey prend un équivalent Murata ; C47, C48 : Samsung ici, Murata dans la BOM DigiKey, même valeur). Vérifié repère par repère : 121 CMS, et la BOM, le CPL et le fichier de
   placement de KiCad donnent les mêmes repères ; positions identiques sauf J15 (voir plus haut).
 
 ## Pièces à souder vous-même

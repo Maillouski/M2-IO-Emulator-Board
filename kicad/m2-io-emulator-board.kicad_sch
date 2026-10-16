@@ -18064,7 +18064,7 @@
 				)
 			)
 		)
-		(property "MPN" "CL21B106KOQNNNG"
+		(property "MPN" "CL21A106KAYNNNE"
 			(at 767.08 688.34 0)
 			(hide yes)
 			(show_name no)
@@ -19549,7 +19549,7 @@
 				)
 			)
 		)
-		(property "MPN" "RC0805FR-07470RL"
+		(property "MPN" "RMCF0805FT470R"
 			(at 256.54 518.16 0)
 			(hide yes)
 			(show_name no)
@@ -19822,7 +19822,7 @@
 				)
 			)
 		)
-		(property "MPN" "EEU-FC1C101"
+		(property "MPN" "EEU-FC1C101H"
 			(at 477.52 88.9 0)
 			(hide yes)
 			(show_name no)
@@ -20185,7 +20185,7 @@
 				)
 			)
 		)
-		(property "MPN" "CL21B106KOQNNNG"
+		(property "MPN" "CL21A106KAYNNNE"
 			(at 739.14 655.32 0)
 			(hide yes)
 			(show_name no)
@@ -22682,7 +22682,7 @@
 				)
 			)
 		)
-		(property "MPN" "CL21B106KOQNNNG"
+		(property "MPN" "CL21A106KAYNNNE"
 			(at 767.08 622.3 0)
 			(hide yes)
 			(show_name no)
@@ -23832,7 +23832,7 @@
 				)
 			)
 		)
-		(property "MPN" "CL21B106KOQNNNG"
+		(property "MPN" "CL21A106KAYNNNE"
 			(at 795.02 622.3 0)
 			(hide yes)
 			(show_name no)
@@ -25827,7 +25827,7 @@
 				)
 			)
 		)
-		(property "MPN" "CL21B106KOQNNNG"
+		(property "MPN" "CL21A106KAYNNNE"
 			(at 906.78 622.3 0)
 			(hide yes)
 			(show_name no)
@@ -26100,7 +26100,7 @@
 				)
 			)
 		)
-		(property "MPN" "CL21B106KOQNNNG"
+		(property "MPN" "CL21A106KAYNNNE"
 			(at 795.02 655.32 0)
 			(hide yes)
 			(show_name no)
@@ -27697,7 +27697,7 @@
 				)
 			)
 		)
-		(property "MPN" "CL21B106KOQNNNG"
+		(property "MPN" "CL21A106KAYNNNE"
 			(at 878.84 655.32 0)
 			(hide yes)
 			(show_name no)
@@ -28810,7 +28810,7 @@
 				)
 			)
 		)
-		(property "MPN" "CL21B106KOQNNNG"
+		(property "MPN" "CL21A106KAYNNNE"
 			(at 533.4 88.9 0)
 			(hide yes)
 			(show_name no)
@@ -29386,7 +29386,7 @@
 				)
 			)
 		)
-		(property "MPN" "CL21B106KOQNNNG"
+		(property "MPN" "CL21A106KAYNNNE"
 			(at 878.84 688.34 0)
 			(hide yes)
 			(show_name no)
@@ -29754,7 +29754,7 @@
 				)
 			)
 		)
-		(property "MPN" "CL21B106KOQNNNG"
+		(property "MPN" "CL21A106KAYNNNE"
 			(at 795.02 688.34 0)
 			(hide yes)
 			(show_name no)
@@ -30690,7 +30690,7 @@
 				)
 			)
 		)
-		(property "MPN" "CL21B106KOQNNNG"
+		(property "MPN" "CL21A106KAYNNNE"
 			(at 162.56 749.3 0)
 			(hide yes)
 			(show_name no)
@@ -31227,7 +31227,7 @@
 (property "Value" "22 µF" (at 93.98 509.27 0) (effects (font (size 1.27 1.27)) (justify left)))
 (property "Footprint" "Capacitor_SMD:C_0805_2012Metric" (at 91.44 508.00 0) (effects (font (size 1.27 1.27))) (hide yes))
 (property "Datasheet" "" (at 91.44 508.00 0) (effects (font (size 1.27 1.27))) (hide yes))
-(property "MPN" "GRM21BR61E226ME44L" (at 91.44 508.00 0) (effects (font (size 1.27 1.27))) (hide yes))
+(property "MPN" "CL21A226MOCLRNC" (at 91.44 508.00 0) (effects (font (size 1.27 1.27))) (hide yes))
 (pin "1" (uuid "29eeb92c-820d-4a59-8d4e-6098ad77a18e"))(pin "2" (uuid "32761b9a-d4c9-4063-b082-8fcd8e73e87d"))
 (instances (project "m2-io-emulator-board" (path "/d44661bf-d01e-4075-8845-9c2310b0d4a5" (reference "C47") (unit 1)))))
 (label "HS_AVG" (at 91.44 504.19 90) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "89405372-3e60-41fa-9087-d85e9c67a892"))
@@ -31247,7 +31247,7 @@
 (property "Value" "22 µF" (at 93.98 537.21 0) (effects (font (size 1.27 1.27)) (justify left)))
 (property "Footprint" "Capacitor_SMD:C_0805_2012Metric" (at 91.44 535.94 0) (effects (font (size 1.27 1.27))) (hide yes))
 (property "Datasheet" "" (at 91.44 535.94 0) (effects (font (size 1.27 1.27))) (hide yes))
-(property "MPN" "GRM21BR61E226ME44L" (at 91.44 535.94 0) (effects (font (size 1.27 1.27))) (hide yes))
+(property "MPN" "CL21A226MOCLRNC" (at 91.44 535.94 0) (effects (font (size 1.27 1.27))) (hide yes))
 (pin "1" (uuid "a434dc06-a236-4d53-ae81-70bd7e2225a5"))(pin "2" (uuid "f1ec9197-2b75-4666-9611-e6791b30ad95"))
 (instances (project "m2-io-emulator-board" (path "/d44661bf-d01e-4075-8845-9c2310b0d4a5" (reference "C48") (unit 1)))))
 (label "VS_AVG" (at 91.44 532.13 90) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "ae349a90-303a-4c60-aede-d8f7524b1946"))

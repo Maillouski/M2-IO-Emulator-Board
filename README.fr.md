@@ -132,7 +132,7 @@ Carte : 2 couches, 180 × 190 mm. Les Gerbers sortent des réglages de tracé en
   donne une horloge TMDS de 25 à 200 MHz) ; les paires HDMI passent sur une carte 2 couches sans impédance contrôlée. La V1 est la
   seule carte commandée.
 - **U4 se soude à la main** et vient d'une source du marché gris (voir la [BOM](bom/BOM.fr.md#u4-cs5213)). Sa pastille centrale
-  a des vias : commander des vias bouchés (via-in-pad) ou réduire la pâte.
+  a des vias : commander des vias « Epoxy Filled & Capped » ou réduire la pâte.
 - **U5 (NX3303X) :** son brochage vient du schéma de brochage publié par le fabricant ; il n'a pas été vérifié sur une vraie puce.
 - **CN1 et CN2** sont des embases 3M simples à quatre murs, sans leviers d'éjection.
 

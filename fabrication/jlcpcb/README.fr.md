@@ -18,8 +18,9 @@ pièces traversantes.
 - **PCB :** 2 couches, 180 × 190 mm (la taille est lue dans les Gerbers), 1,6 mm. La couleur et la finition sont au choix. Le
   design utilise des pistes de 0,2 mm au minimum avec 0,2 mm d'isolement, des vias de 0,7 / 0,3 mm et 0,8 / 0,4 mm et des trous
   de composants de 0,8 mm au minimum : tout est dans les règles standard de JLCPCB.
-  - **Via-in-pad :** la pastille centrale de U4 porte 16 vias. Choisissez des vias bouchés et recouverts (option via-in-pad de
-    JLCPCB) pour que la brasure ne fuie pas par les trous. Sans cette option, mettez moins de pâte sur cette pastille en
+  - **Via-in-pad :** la pastille centrale de U4 porte 16 vias. Sous Via Covering, choisissez **Epoxy Filled & Capped** (pas « Plugged » :
+    le bouchage à l'encre ne couvre pas les trous situés dans une pastille) pour que la brasure ne fuie pas par les trous. Le
+    2026-10-16, l'option était proposée en 2 couches et ajoutait environ 62 $ US pour 5 cartes. Sans cette option, mettez moins de pâte sur cette pastille en
     soudant U4.
 - **PCB Assembly :** **dessus** seulement, 2 cartes ou plus. Economic accepte de 2 à 50 cartes et ne demande pas de repères
   optiques. La pastille CMS la plus proche du bord est à 7,85 mm (J15, la prise HDMI, posée au bord) ; toutes les autres sont à

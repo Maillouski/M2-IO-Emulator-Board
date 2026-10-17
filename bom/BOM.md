@@ -83,7 +83,7 @@ The CS5213 is not stocked by DigiKey, Mouser or JLCPCB (JLCPCB only lists custom
 guaranteed.
 
 U4 is a QFN with an exposed pad and a 0.4 mm pitch: solder it with hot air or a reflow oven. Its exposed pad has 16 vias to the
-ground plane; ask for plugged and capped vias (via-in-pad) when you order the PCB, or reduce the paste on that pad, otherwise
+ground plane; ask JLCPCB for "Epoxy Filled & Capped" vias (not "Plugged") when you order the PCB, or reduce the paste on that pad, otherwise
 solder can wick through the holes.
 
 ## Cost

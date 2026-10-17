@@ -126,7 +126,7 @@ Board: 2 layers, 180 × 190 mm. Gerbers come from the PCB's own plot settings (K
   25-200 MHz TMDS clock range); the HDMI pairs run on a 2-layer board without controlled impedance. V1 is the only board that
   has been ordered.
 - **U4 is soldered by hand** and comes from a grey-market source (see the [BOM](bom/BOM.md#u4-cs5213)). Its exposed pad has vias:
-  order plugged vias (via-in-pad) or reduce the paste.
+  order "Epoxy Filled & Capped" vias or reduce the paste.
 - **U5 (NX3303X):** its pinout comes from the maker's published pin diagram; it has not been checked on a real chip.
 - **CN1 and CN2** are plain 3M four-wall headers, without ejector latches.
 

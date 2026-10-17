@@ -18,8 +18,9 @@ parts yourself.
 - **PCB:** 2 layers, 180 × 190 mm (the size is read from the Gerbers), 1.6 mm. Colour and surface finish are your choice. The
   design uses 0.2 mm minimum tracks with 0.2 mm clearance, 0.7 / 0.3 mm and 0.8 / 0.4 mm vias and 0.8 mm minimum component
   holes, all within JLCPCB's standard rules.
-  - **Via-in-pad:** the exposed pad of U4 has 16 vias. Choose plugged and capped vias (JLCPCB's via-in-pad option) so solder
-    does not wick through them. Without that option, put less paste on that pad when you solder U4.
+  - **Via-in-pad:** the exposed pad of U4 has 16 vias. Under Via Covering, choose **Epoxy Filled & Capped** (not "Plugged":
+    ink plugging does not cover holes inside a pad) so solder does not wick through them. On 2026-10-16 it was offered for 2-layer
+    boards and added about 62 USD to 5 boards. Without that option, put less paste on that pad when you solder U4.
 - **PCB Assembly:** **top side** only, quantity 2 or more. Economic accepts 2 to 50 boards and needs no fiducials. The closest
   SMD pad is 7.85 mm from the board edge (J15, the HDMI jack, which sits on the edge); every other SMD pad is at least 10 mm away.
   JLCPCB may still ask for edge rails because of J15.

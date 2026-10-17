@@ -85,7 +85,7 @@ clients, sans stock). Le 2026-10-15, il se trouvait sur AliExpress (recherche «
 source du marché gris : l'authenticité n'est pas garantie.
 
 U4 est un QFN à pastille centrale, au pas de 0,4 mm : le souder à l'air chaud ou au four de refusion. Sa pastille centrale a
-16 vias vers le plan de masse ; demander des vias bouchés et recouverts (via-in-pad) à la commande du PCB, ou réduire la pâte sur
+16 vias vers le plan de masse ; demander à JLCPCB des vias « Epoxy Filled & Capped » (pas « Plugged ») à la commande du PCB, ou réduire la pâte sur
 cette pastille, sinon la brasure peut fuir par les trous.
 
 ## Coût

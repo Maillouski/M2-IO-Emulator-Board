@@ -36,7 +36,7 @@ quantité 1, sans taxes ni livraison. Prix et stocks changent : revérifier avan
 | 1 | J13 | VGA (DE-15 HD) femelle, coudée | Amphenol L77HDE15SD1CH4F | L77HDE15SD1CH4F-ND | entrée VGA 24 kHz |
 | 1 | J14 | JST NH 5 broches, pas 2,5 mm | JST B5P-SHF-1AA | 455-B5P-SHF-1AA-ND | VIDEO OUT |
 | 1 | J15 | prise HDMI type A, coudée | Amphenol 10029449-001RLF | 609-1010-1-ND | entrée HDMI (V3) ; l'assemblage JLCPCB utilise la 10029449-111RLF (C427307), épuisée chez DigiKey ; la -001RLF est celle pour laquelle l'empreinte KiCad est dessinée |
-| 1 | J16 | double prise RCA superposée (rouge / blanche), coudée | Same Sky RCJ-2223 | CP-1435-ND | sortie stéréo (V3) : rouge = droite, blanche = gauche |
+| 1 | J16 | double prise RCA superposée (rouge / blanche), coudée | Same Sky RCJ-2223 | CP-1435-ND | sortie stéréo (V3) : en haut = gauche, en bas = droite (sur la RCJ-2223, rouge = gauche). Même empreinte : Lian Xin XDJK-0271-1650 (LCSC C7527522), blanche en haut |
 | 5 | JP1, JP2-JP4, JP10 | barrette 1 × 3 | Würth 61300311121 | 732-5316-ND | JP1 = alim. drive board, JP2-JP4 = ampli vidéo, JP10 = 5 V de la puce HDMI |
 | 5 | JP5-JP9 | barrette 1 × 2 | Würth 61300211121 | 732-5315-ND | JP5-JP7 = terminaison VGA 75 Ω, JP8 = choix d'écran, JP9 = source vidéo |
 | 10 | SH1-SH10 | cavalier | TE 382811-8 | A26228-ND | vendu par 10 |

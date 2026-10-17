@@ -11,7 +11,7 @@ feedback) and the original arcade monitor.
 > **Status: prototype.** The design passes DRC and ERC, but no board has been built or tested yet. Read
 > [Open points](#open-points) before you order.
 
-**Version: V3** (2026-10-16), which adds an [HDMI input](#hdmi-input-v3) with its own HDMI → VGA converter, a stereo audio
+**Version: V3.2** (2026-10-16). V3 adds an [HDMI input](#hdmi-input-v3) with its own HDMI → VGA converter, a stereo audio
 output and a [composite sync](#composite-sync) that no longer depends on the polarity of H and V. V2 (screen jumper JP8) is kept under the tag [`v2`](https://github.com/Maillouski/M2-IO-Emulator-Board/tree/v2), and V1,
 the first board, ordered from JLCPCB on 2026-10-13, under the tag [`v1`](https://github.com/Maillouski/M2-IO-Emulator-Board/tree/v1).
 
@@ -67,7 +67,8 @@ no external HDMI → VGA adapter is needed. The VGA input J13 is still there, an
 
 - The switch is made by U7 (TS5V330, R/G/B) and U8 (74HCT157, H/V sync); everything after it (amplifier, composite sync, VIDEO
   OUT) is the same as on V2.
-- **Audio:** J16, a stacked RCA jack: **red (top) = right**, **white (bottom) = left**, AC-coupled (10 µF in series).
+- **Audio:** J16, a stacked RCA jack: **top = left**, **bottom = right**, AC-coupled (10 µF in series). The footprint takes a
+  Same Sky RCJ-2223 (DigiKey; red on top, so red = left) or a Lian Xin XDJK-0271-1650 (LCSC C7527522; white on top, red at the bottom).
 - **Hot plug:** HPD is pulled up to the HDMI cable's 5 V, so the host sees a display as soon as the cable is in.
 - **EDID:** U6, an AT24C02 EEPROM on the HDMI DDC lines (address 0x50, decoupled by C24), is fitted and comes **blank**; U4's own
   DDC pins are not connected. The host must write a 256-byte EDID into it (the monitor's video mode, and HDMI audio if wanted):
@@ -133,7 +134,7 @@ Board: 2 layers, 180 × 190 mm. Gerbers come from the PCB's own plot settings (K
 ## 3D models
 
 The Arduino Mega model in `kicad/3d/` is derived from Arduino's CAD files (CC BY-SA 4.0) and KiCad library models; see
-[`kicad/3d/README.md`](kicad/3d/README.md). The JST NH connectors and the RCA jack (J16) use simplified models made for this project.
+[`kicad/3d/README.md`](kicad/3d/README.md). The JST NH connectors and the RCA jack (J16, drawn as the RCJ-2223) use simplified models made for this project.
 
 ## Credits
 

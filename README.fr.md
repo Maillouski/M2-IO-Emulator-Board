@@ -11,7 +11,7 @@ d'origine (retour de force) et moniteur arcade d'origine.
 > **État : prototype.** Le design passe la DRC et l'ERC, mais aucune carte n'a encore été fabriquée ni testée. Lire les
 > [points ouverts](#points-ouverts) avant de commander.
 
-**Version : V3** (2026-10-16), qui ajoute une [entrée HDMI](#entrée-hdmi-v3) avec son propre convertisseur HDMI → VGA, une
+**Version : V3.2** (2026-10-16). La V3 ajoute une [entrée HDMI](#entrée-hdmi-v3) avec son propre convertisseur HDMI → VGA, une
 sortie audio stéréo et une [synchro composite](#synchro-composite) qui ne dépend plus de la polarité de H et V. La V2 (cavalier d'écran JP8) est gardée sous l'étiquette
 [`v2`](https://github.com/Maillouski/M2-IO-Emulator-Board/tree/v2), et la V1, première carte, commandée chez JLCPCB le
 2026-10-13, sous l'étiquette [`v1`](https://github.com/Maillouski/M2-IO-Emulator-Board/tree/v1).
@@ -71,8 +71,9 @@ H/V et audio stéréo : plus besoin d'adaptateur HDMI → VGA externe. L'entrée
 
 - La commutation est faite par U7 (TS5V330, R/V/B) et U8 (74HCT157, synchros H/V) ; tout ce qui suit (ampli, synchro
   composite, VIDEO OUT) est identique à la V2.
-- **Audio :** J16, double prise RCA superposée : **rouge (en haut) = droite**, **blanche (en bas) = gauche**, liaison par
-  condensateur (10 µF en série).
+- **Audio :** J16, double prise RCA superposée : **en haut = gauche**, **en bas = droite**, liaison par condensateur (10 µF en
+  série). L'empreinte accepte une Same Sky RCJ-2223 (DigiKey ; rouge en haut, donc rouge = gauche) ou une Lian Xin
+  XDJK-0271-1650 (LCSC C7527522 ; blanche en haut, rouge en bas).
 - **Branchement à chaud :** le HPD est tiré au 5 V du câble HDMI : l'hôte voit un écran dès que le câble est branché.
 - **EDID :** U6, une EEPROM AT24C02 sur les lignes DDC du HDMI (adresse 0x50, découplée par C24), est posée et arrive **vierge** ;
   les broches DDC de U4 ne sont pas reliées. L'hôte doit y écrire un EDID de 256 octets (le mode vidéo du moniteur, et le son
@@ -139,8 +140,8 @@ Carte : 2 couches, 180 × 190 mm. Les Gerbers sortent des réglages de tracé en
 ## Modèles 3D
 
 Le modèle de l'Arduino Mega dans `kicad/3d/` est dérivé des fichiers CAO d'Arduino (CC BY-SA 4.0) et de modèles de la
-bibliothèque KiCad ; voir [`kicad/3d/README.fr.md`](kicad/3d/README.fr.md). Les connecteurs JST NH et la prise RCA (J16)
-utilisent des modèles simplifiés faits pour ce projet.
+bibliothèque KiCad ; voir [`kicad/3d/README.fr.md`](kicad/3d/README.fr.md). Les connecteurs JST NH et la prise RCA (J16,
+dessinée comme la RCJ-2223) utilisent des modèles simplifiés faits pour ce projet.
 
 ## Crédits
 

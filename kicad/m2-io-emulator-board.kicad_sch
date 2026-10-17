@@ -10442,7 +10442,7 @@
 		)
 		(uuid "1a8b0202-1cd4-4974-b4b8-9764514f4f61")
 	)
-	(label "AUD_OUT_R"
+	(label "AUD_OUT_L"
 		(at 822.96 546.1 180)
 		(effects
 			(font
@@ -14052,7 +14052,7 @@
 		)
 		(uuid "c6ef217b-1691-4274-92fe-8db0f351c615")
 	)
-	(label "AUD_OUT_L"
+	(label "AUD_OUT_R"
 		(at 822.96 543.56 180)
 		(effects
 			(font
@@ -18933,7 +18933,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "RCJ-2223"
+		(property "Value" "XDJK-0271-1650"
 			(at 828.04 551.18 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18944,7 +18944,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "interface-borne:CUI_RCJ-22xx_RCA_Dual_Horizontal"
+		(property "Footprint" "interface-borne:RCA_Dual_Stacked_RCJ-22xx_XDJK-0271-1650"
 			(at 828.04 538.48 0)
 			(hide yes)
 			(show_name no)
@@ -18966,7 +18966,7 @@
 				)
 			)
 		)
-		(property "Description" "Sortie audio de la puce HDMI vers le préampli : prise du haut rouge = DROITE, prise du bas blanche = GAUCHE"
+		(property "Description" "Sortie audio de la puce HDMI vers le préampli : prise du haut (broche 3) = GAUCHE, prise du bas (broche 2) = DROITE. XDJK-0271-1650 (JLCPCB C7527522) : haut blanc, bas rouge. RCJ-2223 (DigiKey) : haut rouge = GAUCHE"
 			(at 828.04 538.48 0)
 			(hide yes)
 			(show_name no)
@@ -18977,7 +18977,7 @@
 				)
 			)
 		)
-		(property "MPN" "RCJ-2223"
+		(property "MPN" "XDJK-0271-1650"
 			(at 828.04 538.48 0)
 			(hide yes)
 			(show_name no)

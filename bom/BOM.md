@@ -35,7 +35,7 @@ shipping. Prices and stock change, so check again before you order.
 | 1 | J13 | VGA (DE-15 HD) female, right angle | Amphenol L77HDE15SD1CH4F | L77HDE15SD1CH4F-ND | VGA 24 kHz input |
 | 1 | J14 | 5-pin JST NH, 2.5 mm | JST B5P-SHF-1AA | 455-B5P-SHF-1AA-ND | VIDEO OUT |
 | 1 | J15 | HDMI type A receptacle, right angle | Amphenol 10029449-001RLF | 609-1010-1-ND | V3 HDMI input; the JLCPCB assembly uses 10029449-111RLF (C427307), out of stock at DigiKey; -001RLF is the part the KiCad footprint is drawn for |
-| 1 | J16 | dual stacked RCA jack (red / white), right angle | Same Sky RCJ-2223 | CP-1435-ND | V3 stereo out: red = right, white = left |
+| 1 | J16 | dual stacked RCA jack (red / white), right angle | Same Sky RCJ-2223 | CP-1435-ND | V3 stereo out: top = left, bottom = right (on the RCJ-2223, red = left). Same footprint: Lian Xin XDJK-0271-1650 (LCSC C7527522), white on top |
 | 5 | JP1, JP2-JP4, JP10 | 1 × 3 pin header | Würth 61300311121 | 732-5316-ND | JP1 = drive board power, JP2-JP4 = video amp, JP10 = HDMI chip 5 V |
 | 5 | JP5-JP9 | 1 × 2 pin header | Würth 61300211121 | 732-5315-ND | JP5-JP7 = 75 Ω VGA termination, JP8 = screen select, JP9 = video source |
 | 10 | SH1-SH10 | jumper | TE 382811-8 | A26228-ND | sold by 10 |

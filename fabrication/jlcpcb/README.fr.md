@@ -79,5 +79,6 @@ Numéros, types, stocks et prix vérifiés en direct sur jlcpcb.com le 2026-10-1
 - **Pièces traversantes :** C17, D1, J1-J14, J16, JP1-JP10, U1, SW1, SW2 et TP1-TP4, plus les cavaliers SH1-SH10. Commandez-les
   avec la [BOM DigiKey](../../bom/BOM-digikey.csv), sans les lignes CMS.
 
-JLCPCB peut aussi souder les pièces traversantes, contre supplément. LCSC a en stock les embases JST NH de 10 et 12 broches
+JLCPCB peut aussi souder les pièces traversantes, contre supplément. Pour J16, LCSC a la Lian Xin XDJK-0271-1650 (C7527522),
+qui va dans la même empreinte. LCSC a en stock les embases JST NH de 10 et 12 broches
 (C160365 : 3 292 pièces ; C160367 : 133 pièces, au 2026-10-16).

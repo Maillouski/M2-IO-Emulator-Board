@@ -76,5 +76,6 @@ quantity.
 - **Through-hole parts:** C17, D1, J1-J14, J16, JP1-JP10, U1, SW1, SW2 and TP1-TP4, plus the SH1-SH10 jumpers. Order them with
   the [DigiKey BOM](../../bom/BOM-digikey.csv), leaving out the SMD lines.
 
-JLCPCB can also solder through-hole parts, at extra cost. LCSC stocks the 10-pin and 12-pin JST NH headers (C160365: 3 292 in
+JLCPCB can also solder through-hole parts, at extra cost. For J16, LCSC stocks the Lian Xin XDJK-0271-1650 (C7527522), which fits
+the same footprint. LCSC stocks the 10-pin and 12-pin JST NH headers (C160365: 3 292 in
 stock; C160367: 133 in stock, on 2026-10-16).
